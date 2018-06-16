@@ -1,5 +1,5 @@
 const express = require('express')
-const { ApolloEngine } = require('apollo-engine')
+// const { ApolloEngine } = require('apollo-engine')
 const bodyParser = require('body-parser')
 const { graphqlExpress, graphiqlExpress } = require('apollo-server-express')
 const { makeExecutableSchema } = require('graphql-tools')
@@ -39,11 +39,11 @@ server.use(
     context: {
       models,
       user: req.user
-    },
-    tracing: true,
-    cacheControl: {
-      defaultMaxAge: 20
     }
+    // tracing: true,
+    // cacheControl: {
+    //   defaultMaxAge: 20
+    // }
   }))
 )
 
@@ -61,14 +61,16 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
-const engine = new ApolloEngine({
-  apiKey: KEYS.ENGINE_API_KEY
-})
+server.listen(port, () => console.log(`SERVER LISTENING ON PORT ${port}`))
 
-engine.listen(
-  {
-    port,
-    expressApp: server
-  },
-  () => console.log(`SERVER LISTENING ON PORT ${port}`)
-)
+// const engine = new ApolloEngine({
+//   apiKey: KEYS.ENGINE_API_KEY
+// })
+
+// engine.listen(
+//   {
+//     port,
+//     expressApp: server
+//   },
+//   () => console.log(`SERVER LISTENING ON PORT ${port}`)
+// )
