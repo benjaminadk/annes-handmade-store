@@ -19,6 +19,7 @@ import ZoomIcon from '@material-ui/icons/ZoomIn'
 import { GET_ALL_PRODUCTS_QUERY } from '../queries/getAllProducts'
 import { ADD_PRODUCT_TO_CART } from '../mutations/addProductToCart'
 import { GET_CART_BY_ID_QUERY } from '../queries/getCartById'
+import Loading from '../components/Loading'
 
 const styles = theme => ({
   root: {
@@ -102,7 +103,7 @@ class Catalog extends Component {
       classes
     } = this.props
     const { message } = this.state
-    if (loading) return null
+    if (loading) return <Loading />
     return [
       <div key="catalog">
         <div className={classes.root}>

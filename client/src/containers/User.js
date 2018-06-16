@@ -4,17 +4,32 @@ import { graphql, compose } from 'react-apollo'
 import { GET_USER_BY_ID_QUERY } from '../queries/getUserById'
 import { SET_AVATAR_MUTATION } from '../mutations/setAvatar'
 import { S3_SIGN_MUTATION } from '../mutations/s3Sign'
+import Divider from '@material-ui/core/Divider'
+import Hidden from '@material-ui/core/Hidden'
 import UserDropzone from '../components/User.Dropzone'
+import UserSales from '../components/User.Sales'
+import Loading from '../components/Loading'
 import axios from 'axios'
 import { formatFilename } from '../utils/formatFilename'
 
-const styles = theme => ({})
+const styles = theme => ({
+  root: {
+    paddingLeft: '5vw',
+    paddingRight: '5vw'
+  }
+})
 
 class User extends Component {
   state = {
     file: null,
     progress: 0,
     avatar: ''
+  }
+
+  componentDidMount() {
+    if (localStorage.getItem('AVATAR')) {
+      this.setState({ avatar: localStorage.getItem('AVATAR') })
+    }
   }
 
   uploadToS3 = async (file, requestUrl) => {
@@ -49,29 +64,28 @@ class User extends Component {
     await this.setState({ avatar: imageUrl })
   }
 
-  onDrop = files => {
-    console.log(files)
-    this.setState({ file: files[0] })
-  }
+  onDrop = files => this.setState({ file: files[0] })
 
   render() {
     const {
-      loading,
-      data: { getUserById }
+      classes,
+      data: { getUserById, loading }
     } = this.props
-    console.log(getUserById)
-    if (loading) return null
+    if (loading) return <Loading />
     return (
-      <div>
+      <div className={classes.root}>
         <UserDropzone
           file={this.state.file}
           onDrop={this.onDrop}
           handleUploadAvatar={this.handleUploadAvatar}
+          avatar={this.state.avatar}
+          progress={this.state.progress}
         />
-        {this.state.avatar && (
-          <img src={this.state.avatar} alt="avatar" height={200} width={200} />
-        )}
-        <h1>Progress: {this.state.progress}</h1>
+        <Divider />
+        <Hidden smDown>
+          <UserSales sales={getUserById.sales} />
+        </Hidden>
+        <Divider />
       </div>
     )
   }

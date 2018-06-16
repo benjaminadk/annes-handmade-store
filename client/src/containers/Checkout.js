@@ -25,6 +25,7 @@ import CheckoutAddressDialog from '../components/Checkout.Address.Dialog'
 import CheckoutPayment from '../components/Checkout.Payment'
 import CheckoutComplete from '../components/Checkout.Complete'
 import CheckoutConfirmDialog from '../components/Checkout.Confirm.Dialog'
+import Loading from '../components/Loading'
 import jd from 'jwt-decode'
 
 const styles = theme => ({
@@ -290,7 +291,7 @@ class Checkout extends Component {
       bills: { loading: loading3, getBillingsById },
       classes
     } = this.props
-    if (loading1 || loading2 || loading3) return null
+    if (loading1 || loading2 || loading3) return <Loading />
     return [
       <div key="checkout-main" className={classes.root}>
         <div className={classes.top}>
