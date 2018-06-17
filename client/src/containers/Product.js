@@ -15,7 +15,12 @@ const styles = theme => ({
   root: {
     display: 'grid',
     gridTemplateColumns: '10% 30% 35% 25%',
-    marginTop: '50px'
+    marginTop: '50px',
+    [theme.breakpoints.down('sm')]: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center'
+    }
   },
   lower: {
     display: 'grid',

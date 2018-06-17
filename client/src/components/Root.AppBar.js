@@ -37,10 +37,15 @@ const styles = theme => ({
     backgroundColor: 'lightgrey',
     border: '2px solid white',
     marginRight: '2vw',
-    marginLeft: '2vw'
+    marginLeft: '2vw',
+    cursor: 'pointer'
+  },
+  button: {
+    cursor: 'pointer'
   },
   loginButton: {
-    marginRight: '2vw'
+    marginRight: '2vw',
+    cursor: 'pointer'
   },
   title: {
     color: 'white'
@@ -79,7 +84,11 @@ const RootAppBar = ({
       </Link>
       <div className={classes.toolRight}>
         <Tooltip title="Click to view Cart" enterDelay={500}>
-          <IconButton onClick={handleCartClick} color="inherit">
+          <IconButton
+            onClick={handleCartClick}
+            color="inherit"
+            className={classes.button}
+          >
             <Badge badgeContent={cartSize}>
               <ShoppingCartIcon className={classes.cartIcon} />
             </Badge>
