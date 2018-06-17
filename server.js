@@ -27,9 +27,7 @@ const resolvers = mergeResolvers(
 )
 const schema = makeExecutableSchema({ typeDefs, resolvers })
 
-if (process.env.NODE_ENV !== 'production') {
-  server.use('*', cors({ origin: 'http://localhost:3000' }))
-}
+server.use(cors())
 
 server.use(
   '/graphql',
