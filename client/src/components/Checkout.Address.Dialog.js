@@ -26,36 +26,36 @@ const styles = theme => ({
   },
   splitInputs: {
     display: 'flex',
-    width: '40vw',
+    width: '60vw',
     marginBottom: '2.5vh'
   },
   titleInput: {
-    width: '19.5vw',
+    width: '29.5vw',
     marginRight: '1vw'
   },
   emailInput: {
-    width: '19.5vw'
+    width: '29.5vw'
   },
   firstInput: {
-    width: '19.5vw',
+    width: '29.5vw',
     marginRight: '1vw'
   },
   lastInput: {
-    width: '19.5vw'
+    width: '29.5vw'
   },
   cityInput: {
-    width: '18vw'
+    width: '28vw'
   },
   stateInput: {
-    width: '12vw',
+    width: '17vw',
     marginLeft: '1vw',
     marginRight: '1vw'
   },
   zipInput: {
-    width: '8vw'
+    width: '13vw'
   },
   inputs: {
-    width: '40vw',
+    width: '60vw',
     marginBottom: '2.5vh'
   },
   required: {
@@ -83,7 +83,7 @@ const AddressDialog = ({
   classes
 }) => {
   return (
-    <Dialog open={open} onClose={closeAddressDialog}>
+    <Dialog open={open} onClose={closeAddressDialog} maxWidth="md">
       <DialogTitle disableTypography className={classes.title}>
         {addressType === 'ship' ? 'Shipping' : 'Billing'} Address
       </DialogTitle>

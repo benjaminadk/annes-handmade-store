@@ -156,7 +156,10 @@ class Checkout extends Component {
   openAddressDialog = addressType =>
     this.setState({ addressDialog: true, addressMenu: false, addressType })
 
-  closeAddressDialog = e => this.setState({ addressDialog: false })
+  closeAddressDialog = e => {
+    this.setState({ addressDialog: false })
+    this.resetAddressForm()
+  }
 
   openAddressMenu = () => this.setState({ addressMenu: true })
 
