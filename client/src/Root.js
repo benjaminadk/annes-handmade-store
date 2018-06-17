@@ -107,7 +107,9 @@ class Root extends Component {
         this.setState({
           open: false,
           loggedIn: true,
-          cartSize: response.data.login.user.cart.quantity.length
+          cartSize: response.data.login.user.cart.quantity.length,
+          username: '',
+          password: ''
         })
         const { jwt, id, avatar } = response.data.login.user
         localStorage.setItem('TOKEN', jwt)
@@ -131,7 +133,12 @@ class Root extends Component {
         variables: { username, password }
       })
       if (response.data.signup.success) {
-        this.setState({ open: false, loggedIn: true })
+        this.setState({
+          open: false,
+          loggedIn: true,
+          username: '',
+          password: ''
+        })
         localStorage.setItem('TOKEN', response.data.signup.user.jwt)
         localStorage.setItem('CART_ID', response.data.signup.user.cart.id)
         localStorage.setItem('SHIPS', JSON.stringify([]))

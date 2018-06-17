@@ -24,7 +24,11 @@ const styles = theme => ({
   toggleButton: {
     marginLeft: '1vw',
     border: `2px solid ${theme.palette.secondary.main}`,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    cursor: 'pointer'
+  },
+  button: {
+    cursor: 'pointer'
   }
 })
 
@@ -86,10 +90,19 @@ const LoginDialog = ({
         )}
       </DialogContent>
       <DialogActions>
-        <Button variant="raised" color="primary" onClick={handleLoginSignup}>
+        <Button
+          variant="raised"
+          color="primary"
+          onClick={handleLoginSignup}
+          className={classes.button}
+        >
           {loginMode ? 'Login' : 'Signup'}
         </Button>
-        <Button variant="raised" onClick={closeLoginDialog}>
+        <Button
+          variant="raised"
+          onClick={closeLoginDialog}
+          className={classes.button}
+        >
           Cancel
         </Button>
       </DialogActions>
