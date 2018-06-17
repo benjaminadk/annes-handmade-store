@@ -16,6 +16,7 @@ import SwipeableViews from 'react-swipeable-views'
 import AppBar from '@material-ui/core/AppBar'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
+import Hidden from '@material-ui/core/Hidden'
 import CheckIcon from '@material-ui/icons/CheckCircle'
 import CircleIcon from '@material-ui/icons/PanoramaFishEye'
 import PrevIcon from '@material-ui/icons/ArrowBack'
@@ -37,11 +38,18 @@ const styles = theme => ({
   top: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      alignItems: 'flex-start'
+    }
   },
   backButton: {
     width: '15vw',
-    margin: '0 5vw'
+    margin: '0 5vw',
+    [theme.breakpoints.down('sm')]: {
+      width: '50vw'
+    }
   },
   title: {
     marginLeft: '15vw'
@@ -312,26 +320,28 @@ class Checkout extends Component {
             Checkout
           </Typography>
         </div>
-        <AppBar position="static" className={classes.appBar}>
-          <Tabs value={this.state.index} fullWidth centered>
-            <Tab
-              label="Confirm Order"
-              icon={this.state.icon_0 ? <CheckIcon /> : <CircleIcon />}
-            />
-            <Tab
-              label="Shipping Address"
-              icon={this.state.icon_1 ? <CheckIcon /> : <CircleIcon />}
-            />
-            <Tab
-              label="Payment Options"
-              icon={this.state.icon_2 ? <CheckIcon /> : <CircleIcon />}
-            />
-            <Tab
-              label="Complete Order"
-              icon={this.state.icon_3 ? <CheckIcon /> : <CircleIcon />}
-            />
-          </Tabs>
-        </AppBar>
+        <Hidden smDown>
+          <AppBar position="static" className={classes.appBar}>
+            <Tabs value={this.state.index} fullWidth centered>
+              <Tab
+                label="Confirm Order"
+                icon={this.state.icon_0 ? <CheckIcon /> : <CircleIcon />}
+              />
+              <Tab
+                label="Shipping Address"
+                icon={this.state.icon_1 ? <CheckIcon /> : <CircleIcon />}
+              />
+              <Tab
+                label="Payment Options"
+                icon={this.state.icon_2 ? <CheckIcon /> : <CircleIcon />}
+              />
+              <Tab
+                label="Complete Order"
+                icon={this.state.icon_3 ? <CheckIcon /> : <CircleIcon />}
+              />
+            </Tabs>
+          </AppBar>
+        </Hidden>
         <SwipeableViews index={this.state.index}>
           <CheckoutConfirm
             getCartById={getCartById}

@@ -27,32 +27,57 @@ const styles = theme => ({
   splitInputs: {
     display: 'flex',
     width: '60vw',
-    marginBottom: '2.5vh'
+    marginBottom: '2.5vh',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      alignItems: 'center'
+    }
   },
   titleInput: {
     width: '29.5vw',
-    marginRight: '1vw'
+    marginRight: '1vw',
+    [theme.breakpoints.down('sm')]: {
+      width: '59vw'
+    }
   },
   emailInput: {
-    width: '29.5vw'
+    width: '29.5vw',
+    [theme.breakpoints.down('sm')]: {
+      width: '59vw'
+    }
   },
   firstInput: {
     width: '29.5vw',
-    marginRight: '1vw'
+    marginRight: '1vw',
+    [theme.breakpoints.down('sm')]: {
+      width: '59vw'
+    }
   },
   lastInput: {
-    width: '29.5vw'
+    width: '29.5vw',
+    [theme.breakpoints.down('sm')]: {
+      width: '59vw'
+    }
   },
   cityInput: {
-    width: '28vw'
+    width: '28vw',
+    [theme.breakpoints.down('sm')]: {
+      width: '59vw'
+    }
   },
   stateInput: {
     width: '17vw',
     marginLeft: '1vw',
-    marginRight: '1vw'
+    marginRight: '1vw',
+    [theme.breakpoints.down('sm')]: {
+      width: '59vw'
+    }
   },
   zipInput: {
-    width: '13vw'
+    width: '13vw',
+    [theme.breakpoints.down('sm')]: {
+      width: '59vw'
+    }
   },
   inputs: {
     width: '60vw',
@@ -60,7 +85,10 @@ const styles = theme => ({
   },
   required: {
     color: 'red',
-    marginRight: '20vw'
+    marginRight: '20vw',
+    [theme.breakpoints.down('sm')]: {
+      marginRight: '5vw'
+    }
   }
 })
 

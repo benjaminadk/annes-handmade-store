@@ -7,6 +7,7 @@ import Divider from '@material-ui/core/Divider'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
 import Slide from '@material-ui/core/Slide'
+import Hidden from '@material-ui/core/Hidden'
 import RemoveCartIcon from '@material-ui/icons/RemoveShoppingCart'
 import AddIcon from '@material-ui/icons/AddCircle'
 import NextIcon from '@material-ui/icons/ArrowForward'
@@ -99,15 +100,17 @@ const Confirm = ({
           return (
             <div key={`confirm-item-${i}`} className={classes.row}>
               <div className={classes.actions}>
-                <Tooltip
-                  title="Edit Quantity"
-                  placement="right"
-                  enterDelay={500}
-                >
-                  <IconButton onClick={() => openEditQuantity(i)}>
-                    <AddIcon />
-                  </IconButton>
-                </Tooltip>
+                <Hidden smDown>
+                  <Tooltip
+                    title="Edit Quantity"
+                    placement="right"
+                    enterDelay={500}
+                  >
+                    <IconButton onClick={() => openEditQuantity(i)}>
+                      <AddIcon />
+                    </IconButton>
+                  </Tooltip>
+                </Hidden>
                 <Tooltip
                   title="Remove From Cart"
                   placement="right"
@@ -159,12 +162,15 @@ const Confirm = ({
                 </Slide>
               )}
               <div className={classes.item}>
-                <div
-                  className={classes.thumbnail}
-                  style={{ backgroundImage: `url(${p.images[0]})` }}
-                />
+                <Hidden smDown>
+                  <div
+                    className={classes.thumbnail}
+                    style={{ backgroundImage: `url(${p.images[0]})` }}
+                  />
+                </Hidden>
                 <Typography variant="body2">{p.title}</Typography>
               </div>
+
               <div>
                 <Typography variant="caption" align="right">
                   {quantity[i]} x {p.price}

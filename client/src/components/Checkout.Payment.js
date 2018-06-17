@@ -33,7 +33,11 @@ const styles = theme => ({
   root: {
     margin: '5vh 5vw',
     display: 'grid',
-    gridTemplateColumns: '50% 50%'
+    gridTemplateColumns: '50% 50%',
+    [theme.breakpoints.down('sm')]: {
+      display: 'flex',
+      flexDirection: 'column-reverse'
+    }
   },
   title: {
     marginBottom: '5vh'
@@ -47,7 +51,10 @@ const styles = theme => ({
       'rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px',
     border: '1px solid #6b7c93',
     borderRadius: '5px',
-    fontFamily: 'Roboto'
+    fontFamily: 'Roboto',
+    [theme.breakpoints.down('sm')]: {
+      width: '80vw'
+    }
   },
   label: {
     fontFamily: 'Roboto',
@@ -55,9 +62,23 @@ const styles = theme => ({
     fontWeight: 600,
     letterSpacing: '0.025em'
   },
+  buttonContainer: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'flex',
+      justifyContent: 'center'
+    }
+  },
+  confirmButton: {
+    [theme.breakpoints.down('sm')]: {
+      width: '80vw'
+    }
+  },
   card: {
     width: '20vw',
-    border: '3px solid #3f51b5'
+    border: '3px solid #3f51b5',
+    [theme.breakpoints.down('sm')]: {
+      width: '80vw'
+    }
   },
   cardTitle: {
     marginLeft: '2vw'
@@ -202,14 +223,17 @@ class Payment extends Component {
                 Postal Code
                 <PostalCodeElement className={classes.stripeElement} />
               </label>
-              <Button
-                type="submit"
-                variant="raised"
-                color="secondary"
-                size="large"
-              >
-                Confirm Payment
-              </Button>
+              <div className={classes.buttonContainer}>
+                <Button
+                  type="submit"
+                  variant="raised"
+                  color="secondary"
+                  size="large"
+                  className={classes.confirmButton}
+                >
+                  Confirm Payment
+                </Button>
+              </div>
             </form>
           </div>
           <div>

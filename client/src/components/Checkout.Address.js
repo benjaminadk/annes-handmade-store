@@ -16,7 +16,11 @@ const styles = theme => ({
     marginLeft: '5vw',
     marginRight: '5vw',
     display: 'grid',
-    gridTemplateColumns: '70% 30%'
+    gridTemplateColumns: '70% 30%',
+    [theme.breakpoints.down('sm')]: {
+      display: 'flex',
+      flexDirection: 'column-reverse'
+    }
   },
   buttons: {
     marginTop: '3vh',
@@ -26,13 +30,20 @@ const styles = theme => ({
   cardContainer: {
     display: 'flex',
     flexWrap: 'wrap',
-    marginTop: '5vh'
+    marginTop: '5vh',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      alignItems: 'center'
+    }
   },
   card: {
     width: '25vw',
     marginRight: '2.5vw',
     marginBottom: '2.5vw',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    [theme.breakpoints.down('sm')]: {
+      width: '80vw'
+    }
   },
   cardTitle: {
     marginLeft: '2vw'

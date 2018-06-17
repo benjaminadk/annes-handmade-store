@@ -5,7 +5,6 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction'
 import HomeIcon from '@material-ui/icons/Home'
 import SearchIcon from '@material-ui/icons/Search'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
-import HelpIcon from '@material-ui/icons/Help'
 import PersonIcon from '@material-ui/icons/PersonPin'
 
 const styles = theme => ({
@@ -40,7 +39,6 @@ const BottomNav = ({ value, handleBottomNav, classes }) => (
       value="/about"
       icon={<PersonIcon />}
     />
-    <BottomNavigationAction label="Help" value="/help" icon={<HelpIcon />} />
   </BottomNavigation>
 )
 

@@ -4,7 +4,10 @@ import { compose } from 'react-apollo'
 
 const styles = theme => ({
   root: {
-    minHeight: '80vh'
+    minHeight: '80vh',
+    [theme.breakpoints.down('sm')]: {
+      minHeight: '10vh'
+    }
   },
   logoContainer: {
     display: 'flex',
@@ -13,7 +16,11 @@ const styles = theme => ({
   },
   logo: {
     width: '35vw',
-    height: '35vw'
+    height: '35vw',
+    [theme.breakpoints.down('sm')]: {
+      width: '80vw',
+      height: '80vw'
+    }
   }
 })
 

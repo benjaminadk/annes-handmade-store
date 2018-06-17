@@ -27,7 +27,10 @@ const styles = theme => ({
     gridTemplateColumns: '75% 25%',
     marginTop: '10vh',
     paddingLeft: '2.5vw',
-    paddingRight: '2.5vw'
+    paddingRight: '2.5vw',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '5vh'
+    }
   }
 })
 

@@ -36,12 +36,20 @@ const styles = theme => ({
     height: '50vh',
     width: '30vh',
     marginRight: '2.5vw',
-    marginBottom: '5vh'
+    marginBottom: '5vh',
+    [theme.breakpoints.down('sm')]: {
+      height: '50vh',
+      width: '80vw'
+    }
   },
   image: {
     height: '30vh',
     width: '30vh',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    [theme.breakpoints.down('sm')]: {
+      height: '80vw',
+      width: '80vw'
+    }
   },
   cardContent: {
     display: 'flex',
@@ -123,7 +131,11 @@ class Catalog extends Component {
                     />
                   </Tooltip>
                   <CardContent className={classes.cardContent}>
-                    <Typography variant="button" className={classes.title}>
+                    <Typography
+                      variant="button"
+                      className={classes.title}
+                      align="center"
+                    >
                       {p.title}
                     </Typography>
                   </CardContent>
