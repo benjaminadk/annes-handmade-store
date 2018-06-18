@@ -1,5 +1,6 @@
 // const { ApolloEngine } = require('apollo-engine')
 const express = require('express')
+const compression = require('compression')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const sslRedirect = require('heroku-ssl-redirect')
@@ -23,6 +24,7 @@ const schema = makeExecutableSchema({ typeDefs, resolvers })
 const server = express()
 const port = KEYS.PORT
 
+server.use(compression())
 server.use(sslRedirect())
 server.use(cors())
 
