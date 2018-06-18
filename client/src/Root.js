@@ -19,7 +19,6 @@ import RootAppBar from './components/Root.AppBar'
 import BottomNav from './components/Root.BottomNav'
 import jd from 'jwt-decode'
 import 'typeface-roboto'
-import './styles/style.css'
 
 const styles = theme => ({})
 

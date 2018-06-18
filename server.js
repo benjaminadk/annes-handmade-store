@@ -1,27 +1,28 @@
-const express = require('express')
 // const { ApolloEngine } = require('apollo-engine')
+const express = require('express')
 const bodyParser = require('body-parser')
+const cors = require('cors')
+const sslRedirect = require('heroku-ssl-redirect')
+const path = require('path')
 const { graphqlExpress, graphiqlExpress } = require('apollo-server-express')
 const { makeExecutableSchema } = require('graphql-tools')
+const KEYS = require('./config')
+require('./models/connect')
+const models = require('./models')
 const {
   fileLoader,
   mergeResolvers,
   mergeTypes
 } = require('merge-graphql-schemas')
-const cors = require('cors')
-const sslRedirect = require('heroku-ssl-redirect')
-const path = require('path')
-const KEYS = require('./config')
-require('./models/connect')
-//require models individually ??
-const models = require('./models')
-const server = express()
-const port = KEYS.PORT
+
 const typeDefs = mergeTypes(fileLoader(path.join(__dirname, './schemas')))
 const resolvers = mergeResolvers(
   fileLoader(path.join(__dirname, './resolvers'))
 )
 const schema = makeExecutableSchema({ typeDefs, resolvers })
+const server = express()
+const port = KEYS.PORT
+
 server.use(sslRedirect())
 server.use(cors())
 
