@@ -9,15 +9,11 @@ const {
   mergeTypes
 } = require('merge-graphql-schemas')
 const cors = require('cors')
+const sslRedirect = require('heroku-ssl-redirect')
 const path = require('path')
 const KEYS = require('./config')
 require('./models/connect')
-require('./models/billing')
-require('./models/cart')
-require('./models/product')
-require('./models/sale')
-require('./models/shipping')
-require('./models/user')
+//require models individually ??
 const models = require('./models')
 const server = express()
 const port = KEYS.PORT
@@ -26,7 +22,7 @@ const resolvers = mergeResolvers(
   fileLoader(path.join(__dirname, './resolvers'))
 )
 const schema = makeExecutableSchema({ typeDefs, resolvers })
-
+server.use(sslRedirect())
 server.use(cors())
 
 server.use(
