@@ -44,3 +44,5 @@ ReactDOM.render(
   </ApolloProvider>,
   NODE
 )
+
+registerServiceWorker()
