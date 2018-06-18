@@ -1,5 +1,5 @@
 {
-  "name": "annes-handmade",
+  "name": "annes-handmade-backend",
   "version": "1.0.0",
   "description": "an ecommerce website for my mom",
   "main": "server.js",

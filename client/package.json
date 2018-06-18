@@ -1,6 +1,7 @@
 {
-  "name": "client",
+  "name": "annes-handmade-frontend",
   "version": "0.1.0",
+  "description": "react frontend to anne's handmade online store",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^1.2.0",
