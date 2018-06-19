@@ -113,6 +113,11 @@ class Checkout extends Component {
           [`quantity-${i}`]: nextProps.cart.getCartById.cart.quantity[i]
         })
       }
+    } else if (
+      !nextProps.cart.loading &&
+      nextProps.cart.getCartById.cart.products.length === 0
+    ) {
+      this.props.history.push('/catalog')
     }
   }
 
@@ -140,14 +145,17 @@ class Checkout extends Component {
       refetchQueries: [{ query: GET_CART_BY_ID_QUERY, variables: { cartId } }]
     })
     this.props.resetCartBadge()
+    this.props.handleBottomNav(null, '/catalog')
+    this.props.history.push('/catalog')
   }
 
   backToShopping = async () => {
-    this.props.handleBottomNav(null, '/catalog')
-    this.props.history.push('/catalog')
     if (this.state.icon_3) {
       await this.clearCart()
+      return
     }
+    this.props.handleBottomNav(null, '/catalog')
+    this.props.history.push('/catalog')
   }
 
   handleIndex = index => this.setState({ index, [`icon_${index - 1}`]: true })
@@ -374,6 +382,7 @@ class Checkout extends Component {
               billingToShipping={this.billingToShipping}
               billingToBilling={this.billingToBilling}
               openAddressDialog={this.openAddressDialog}
+              backIndex={this.backIndex}
               shipsIndex={this.state.shipsIndex}
               billsIndex={this.state.billsIndex}
               addressMatch={this.state.addressMatch}

@@ -24,6 +24,10 @@ const styles = theme => ({
   card: {
     width: '65vw'
   },
+  cardHeader: {
+    display: 'flex',
+    alignItems: 'center'
+  },
   quantity: {
     marginLeft: theme.spacing.unit * 2
   },
@@ -69,7 +73,16 @@ class Complete extends Component {
         </Typography>
         <div className={classes.cardContainer}>
           <Card className={classes.card}>
-            <CardHeader title="Reciept for order #1234s" />
+            <CardHeader
+              title={
+                <div className={classes.cardHeader}>
+                  <Typography variant="title">Order</Typography> &nbsp;&nbsp;
+                  <Typography variant="caption">{`# ${localStorage.getItem(
+                    'CART_ID'
+                  )}`}</Typography>
+                </div>
+              }
+            />
             <CardContent>
               <Table>
                 <TableHead>
@@ -105,7 +118,7 @@ class Complete extends Component {
                           {quantity[i]} x {p.price}
                         </Typography>
                         <Typography variant="body2">
-                          $ {parseFloat((quantity[i] * p.price).toFixed(2))}
+                          $ {parseFloat(quantity[i] * p.price).toFixed(2)}
                         </Typography>
                       </TableCell>
                     </TableRow>
@@ -124,7 +137,7 @@ class Complete extends Component {
                     $ {subTotal}
                   </Typography>
                   <Typography variant="caption" align="right">
-                    {taxRate * 100} %
+                    {(taxRate * 100).toFixed(2)} %
                   </Typography>
                   <Typography variant="caption" align="right">
                     $ {taxTotal}
@@ -139,10 +152,10 @@ class Complete extends Component {
         </div>
         <Button
           variant="raised"
-          color="primary"
+          color="secondary"
           size="large"
           className={classes.backButton}
-          onClick={() => this.props.clearCart}
+          onClick={this.props.clearCart}
         >
           Continue Shopping
         </Button>

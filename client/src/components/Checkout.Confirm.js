@@ -197,7 +197,7 @@ const Confirm = ({
             $ {subTotal ? subTotal.toFixed(2) : '0.00'}
           </Typography>
           <Typography variant="body2" align="right">
-            {(taxRate * 100).toFixed(3)}%
+            {(taxRate * 100).toFixed(2)}%
           </Typography>
           <Typography variant="body2" align="right">
             $ {taxTotal ? taxTotal.toFixed(2) : '0.00'}

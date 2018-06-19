@@ -22,6 +22,7 @@ import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import AddIcon from '@material-ui/icons/Add'
+import PrevIcon from '@material-ui/icons/ArrowBack'
 import { CREATE_SALE } from '../mutations/createSale'
 import { GET_ALL_PRODUCTS_QUERY } from '../queries/getAllProducts'
 
@@ -41,6 +42,11 @@ const styles = theme => ({
   },
   title: {
     marginBottom: '5vh'
+  },
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
   },
   stripeElement: {
     display: 'block',
@@ -62,13 +68,12 @@ const styles = theme => ({
     fontWeight: 600,
     letterSpacing: '0.025em'
   },
-  buttonContainer: {
-    [theme.breakpoints.down('sm')]: {
-      display: 'flex',
-      justifyContent: 'center'
-    }
+  confirmButtonContainer: {
+    display: 'flex',
+    justifyContent: 'center'
   },
   confirmButton: {
+    width: '40vw',
     [theme.breakpoints.down('sm')]: {
       width: '80vw'
     }
@@ -93,15 +98,32 @@ const styles = theme => ({
     justifyContent: 'center',
     marginBottom: '5vh'
   },
-  addressButton: {
+  addressButtonContainer: {
     display: 'flex',
-    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'center',
     marginTop: '2.5vh',
     marginBottom: '5vh'
+  },
+  addressButton: {
+    width: '20vw',
+    [theme.breakpoints.down('sm')]: {
+      width: '80vw'
+    }
+  },
+  backButton: {
+    width: '20vw',
+    marginTop: '2.5vh',
+    [theme.breakpoints.down('sm')]: {
+      width: '80vw'
+    }
   },
   error: {
     color: 'red',
     marginTop: '2vh'
+  },
+  menuHeader: {
+    outline: 'none'
   }
 })
 
@@ -184,7 +206,8 @@ class Payment extends Component {
       closeAddressMenu,
       billingToShipping,
       billingToBilling,
-      openAddressDialog
+      openAddressDialog,
+      backIndex
     } = this.props
     const shipping = ships[shipsIndex] || null
     const billing = bills[billsIndex] || null
@@ -206,7 +229,7 @@ class Payment extends Component {
             >
               Credit Card Information
             </Typography>
-            <form onSubmit={this.submitForm}>
+            <form onSubmit={this.submitForm} className={classes.form}>
               <label className={classes.label}>
                 Card Number
                 <CardNumberElement className={classes.stripeElement} />
@@ -223,7 +246,7 @@ class Payment extends Component {
                 Postal Code
                 <PostalCodeElement className={classes.stripeElement} />
               </label>
-              <div className={classes.buttonContainer}>
+              <div className={classes.confirmButtonContainer}>
                 <Button
                   type="submit"
                   variant="raised"
@@ -292,22 +315,34 @@ class Payment extends Component {
             <Typography variant="body2" align="center">
               Is your Billing Address different than your Shipping Address?
             </Typography>
-            <div className={classes.addressButton}>
+            <div className={classes.addressButtonContainer}>
               <Button
                 id="anchorEl"
                 variant="raised"
                 color="secondary"
                 size="large"
                 onClick={openAddressMenu}
+                className={classes.addressButton}
               >
                 Change Billing Address
+              </Button>
+              <Button
+                variant="raised"
+                color="secondary"
+                size="large"
+                onClick={() => backIndex(1)}
+                className={classes.backButton}
+              >
+                <PrevIcon /> &nbsp;&nbsp; Back One Step
               </Button>
               <Menu
                 anchorEl={document.getElementById('anchorEl')}
                 open={addressMenu}
                 onClose={closeAddressMenu}
               >
-                <ListSubheader>Shipping</ListSubheader>
+                <ListSubheader className={classes.menuHeader}>
+                  Shipping Addresses
+                </ListSubheader>
                 {ships.length &&
                   ships.map((s, i) => (
                     <MenuItem
@@ -317,7 +352,11 @@ class Payment extends Component {
                       {s.title}
                     </MenuItem>
                   ))}
-                {bills.length && <ListSubheader>Billing</ListSubheader>}
+                {bills.length && (
+                  <ListSubheader className={classes.menuHeader}>
+                    Billing Addresses
+                  </ListSubheader>
+                )}
                 {bills.length &&
                   bills.map((b, j) => (
                     <MenuItem
