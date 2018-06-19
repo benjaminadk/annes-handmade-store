@@ -15,7 +15,6 @@ class App extends Component {
       })
     } else {
       document.querySelector('#stripe-js').addEventListener('load', () => {
-        // Create Stripe instance once Stripe.js loads
         this.setState({
           stripe: window.Stripe('pk_test_htV5BwONms8PGEJ4RVZgsOgU')
         })
