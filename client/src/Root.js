@@ -18,7 +18,6 @@ import LoginDialog from './components/Root.Login'
 import RootAppBar from './components/Root.AppBar'
 import BottomNav from './components/Root.BottomNav'
 import jd from 'jwt-decode'
-import 'typeface-roboto'
 
 const styles = theme => ({})
 
@@ -74,6 +73,15 @@ class Root extends Component {
     if (!bills) {
       localStorage.setItem('BILLS', JSON.stringify([]))
     }
+    let deferredPrompt
+
+    window.addEventListener('beforeinstallprompt', e => {
+      // Prevent Chrome 67 and earlier from automatically showing the prompt
+      e.preventDefault()
+      // Stash the event so it can be triggered later.
+      console.log('gotcha')
+      deferredPrompt = e
+    })
   }
 
   handleCartClick = () => {
