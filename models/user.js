@@ -1,7 +1,11 @@
 const mongoose = require('mongoose')
+const { hashPassword } = require('../middleware/passwordHelpers')
 
 const userSchema = new mongoose.Schema({
-  username: String,
+  username: {
+    type: String,
+    unique: true
+  },
 
   password: String,
 
@@ -36,6 +40,13 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now()
   }
+})
+
+userSchema.pre('save', function(next) {
+  if (this.jwt === '') {
+    this.password = hashPassword(this.password)
+  }
+  next()
 })
 
 mongoose.model('user', userSchema)

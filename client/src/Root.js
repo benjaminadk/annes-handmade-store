@@ -29,6 +29,7 @@ class Root extends Component {
     loginMode: true,
     username: '',
     password: '',
+    passwordError: false,
     open: false,
     errorMessage: '',
     avatar: '',
@@ -98,6 +99,9 @@ class Root extends Component {
   handleLoginSignup = async () => {
     let response
     const { username, password } = this.state
+    if (!username || !password) {
+      return this.setState({ errorMessage: 'email and password required' })
+    }
     if (this.state.loginMode) {
       response = await this.props.login({
         variables: { username, password }
@@ -144,16 +148,40 @@ class Root extends Component {
         localStorage.setItem('BILLS', JSON.stringify([]))
         localStorage.setItem('USER_ID', response.data.signup.user.id)
       } else {
-        this.setState({ errorMessage: response.data.signup.message })
+        if (response.data.signup.message === 'password error') {
+          this.setState({
+            passwordError: true,
+            errorMessage: response.data.signup.message
+          })
+        } else {
+          this.setState({ errorMessage: response.data.signup.message })
+        }
       }
     }
   }
 
-  closeLoginDialog = e => this.setState({ open: false })
+  closeLoginDialog = e =>
+    this.setState({
+      open: false,
+      username: '',
+      password: '',
+      errorMessage: '',
+      passwordError: false
+    })
 
-  toggleLoginMode = () => this.setState({ loginMode: !this.state.loginMode })
+  toggleLoginMode = () =>
+    this.setState({
+      loginMode: !this.state.loginMode,
+      errorMessage: '',
+      passwordError: false
+    })
 
-  handleChange = e => this.setState({ [e.target.name]: e.target.value })
+  handleChange = e =>
+    this.setState({
+      [e.target.name]: e.target.value,
+      errorMessage: '',
+      passwordError: false
+    })
 
   updateCartBadge = add => {
     if (add) {
@@ -233,6 +261,7 @@ class Root extends Component {
         loginMode={this.state.loginMode}
         username={this.state.username}
         password={this.state.password}
+        passwordError={this.state.passwordError}
         errorMessage={this.state.errorMessage}
         closeLoginDialog={this.closeLoginDialog}
         toggleLoginMode={this.toggleLoginMode}

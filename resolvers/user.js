@@ -1,9 +1,11 @@
-//const bcrypt = require('bcrypt-nodejs')
-const { promisify } = require('util')
 const jwt = require('jsonwebtoken')
 const AWS = require('aws-sdk')
 const KEYS = require('../config')
-const saltRounds = 10
+const {
+  verifyPassword,
+  validateEmail,
+  validatePassword
+} = require('../middleware/passwordHelpers')
 
 const s3 = new AWS.S3({
   signatureVersion: 'v4',
@@ -36,6 +38,28 @@ module.exports = {
 
   Mutation: {
     signup: async (root, { username, password }, { models }) => {
+      if (!validateEmail(username)) {
+        return {
+          success: false,
+          message: 'invalid email',
+          user: null
+        }
+      }
+      if (!validatePassword(password)) {
+        return {
+          success: false,
+          message: 'password error',
+          user: null
+        }
+      }
+      const alreadyExists = await models.User.findOne({ username })
+      if (alreadyExists) {
+        return {
+          success: false,
+          message: 'email already exists',
+          user: null
+        }
+      }
       const cart = new models.Cart()
       const savedCart = await cart.save()
       const user = new models.User({
@@ -76,7 +100,7 @@ module.exports = {
         }
       }
 
-      const match = password === user.password
+      const match = verifyPassword(password, user.password)
       if (match) {
         const token = await jwt.sign(
           {

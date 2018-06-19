@@ -18,8 +18,15 @@ const styles = theme => ({
     alignItems: 'center',
     marginTop: '3vh'
   },
+  errorContainer: {
+    marginTop: '3vh',
+    maxHeight: '5vh',
+    height: '5vh'
+  },
   error: {
-    color: 'red'
+    color: 'red',
+    width: '25vw',
+    textAlign: 'center'
   },
   toggleButton: {
     marginLeft: '1vw',
@@ -37,6 +44,7 @@ const LoginDialog = ({
   loginMode,
   username,
   password,
+  passwordError,
   errorMessage,
   closeLoginDialog,
   toggleLoginMode,
@@ -57,6 +65,7 @@ const LoginDialog = ({
           onChange={handleChange}
           value={username}
           className={classes.inputs}
+          helperText={!loginMode && 'Must be valid email'}
         />
         <br />
         <TextField
@@ -66,7 +75,16 @@ const LoginDialog = ({
           onChange={handleChange}
           value={password}
           className={classes.inputs}
+          helperText={
+            !loginMode && 'Must contain 1 uppercase, lowercase & number'
+          }
+          error={passwordError}
         />
+        <div className={classes.errorContainer}>
+          {errorMessage && (
+            <Typography className={classes.error}>{errorMessage}</Typography>
+          )}
+        </div>
         <div className={classes.text}>
           <Typography variant="body2">
             {loginMode
@@ -83,11 +101,6 @@ const LoginDialog = ({
             {loginMode ? 'Signup' : 'Login'}
           </Button>
         </div>
-        {errorMessage && (
-          <div>
-            <Typography className={classes.error}>{errorMessage}</Typography>
-          </div>
-        )}
       </DialogContent>
       <DialogActions>
         <Button
