@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { compose } from 'react-apollo'
+import Button from '@material-ui/core/Button'
 
 const styles = theme => ({
   root: {
@@ -21,12 +22,16 @@ const styles = theme => ({
       width: '80vw',
       height: '80vw'
     }
+  },
+  button: {
+    display: 'flex',
+    justifyContent: 'center'
   }
 })
 
 class Home extends Component {
   render() {
-    const { classes } = this.props
+    const { addHomescreenButton, handleAddToHomescreen, classes } = this.props
     return (
       <div className={classes.root}>
         <div className={classes.logoContainer}>
@@ -35,6 +40,18 @@ class Home extends Component {
             alt="logo"
             className={classes.logo}
           />
+        </div>
+        <div className={classes.button}>
+          {addHomescreenButton && (
+            <Button
+              variant="raised"
+              color="primary"
+              size="large"
+              onClick={handleAddToHomescreen}
+            >
+              Add Anne's Handmade To Your Homescreen
+            </Button>
+          )}
         </div>
       </div>
     )

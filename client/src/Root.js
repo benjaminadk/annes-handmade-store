@@ -32,7 +32,8 @@ class Root extends Component {
     open: false,
     errorMessage: '',
     avatar: '',
-    value: 0
+    value: 0,
+    addHomescreenButton: false
   }
 
   componentDidMount = async () => {
@@ -73,14 +74,24 @@ class Root extends Component {
     if (!bills) {
       localStorage.setItem('BILLS', JSON.stringify([]))
     }
-    let deferredPrompt
 
     window.addEventListener('beforeinstallprompt', e => {
-      // Prevent Chrome 67 and earlier from automatically showing the prompt
-      //e.preventDefault()
-      // Stash the event so it can be triggered later.
-      console.log('gotcha')
-      deferredPrompt = e
+      e.preventDefault()
+      this.deferredPrompt = e
+      this.setState({ addHomescreenButton: true })
+    })
+  }
+
+  handleAddToHomescreen = () => {
+    this.setState({ addHomescreenButton: false })
+    this.deferredPrompt.prompt()
+    this.deferredPrompt.userChoice.then(choiceResult => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the A2HS prompt')
+      } else {
+        console.log('User dismissed the A2HS prompt')
+      }
+      this.deferredPrompt = null
     })
   }
 
@@ -229,7 +240,13 @@ class Root extends Component {
         />
         <div>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <PropsRoute
+              exact
+              path="/"
+              component={Home}
+              addHomescreenButton={this.state.addHomescreenButton}
+              handleAddToHomescreen={this.handleAddToHomescreen}
+            />
             <PropsRoute
               path="/catalog"
               component={Catalog}
