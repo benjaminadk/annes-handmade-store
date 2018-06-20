@@ -36,7 +36,7 @@ class Home extends Component {
       <div className={classes.root}>
         <div className={classes.logoContainer}>
           <img
-            src="https://s3-us-west-1.amazonaws.com/shopping-site/assets/logo-500x500.svg"
+            src="https://di213806f07x5.cloudfront.net/logo-500x500.svg"
             alt="logo"
             className={classes.logo}
           />

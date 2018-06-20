@@ -25,6 +25,8 @@ const saleSchema = new mongoose.Schema({
     ref: 'shipping'
   },
 
+  addressMatch: Boolean,
+
   shipped: {
     type: Boolean,
     default: false

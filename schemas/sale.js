@@ -8,6 +8,7 @@ module.exports = `
         total: Float
         billingAddress: Billing
         shippingAddress: Shipping
+        addressMatch: Boolean
         shipped: Boolean
         createdOn: String
     }
@@ -20,6 +21,7 @@ module.exports = `
         total: Float
         billingAddressId: ID
         shippingAddressId: ID
+        addressMatch: Boolean
         email: String
     }
     

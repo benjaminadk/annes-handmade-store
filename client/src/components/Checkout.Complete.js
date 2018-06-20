@@ -171,7 +171,14 @@ class Complete extends Component {
         >
           <ReactToPrint
             trigger={() => (
-              <Button className={classes.printButton}>Print Receipt</Button>
+              <Button
+                variant="raised"
+                color="secondary"
+                size="large"
+                className={classes.printButton}
+              >
+                Print Receipt
+              </Button>
             )}
             content={() => this.printRef}
           />

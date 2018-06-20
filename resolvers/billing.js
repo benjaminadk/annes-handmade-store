@@ -43,6 +43,47 @@ module.exports = {
         await models.User.findOneAndUpdate(filter, update, options)
       }
       return savedBilling
+    },
+
+    editBilling: async (root, { input, id }, { models }) => {
+      try {
+        const {
+          userId,
+          title,
+          email,
+          firstName,
+          lastName,
+          street1,
+          street2,
+          city,
+          state,
+          zip
+        } = input
+        const filter = { _id: id }
+        const update = {
+          $set: {
+            title,
+            email,
+            firstName,
+            lastName,
+            street1,
+            street2,
+            city,
+            state,
+            zip
+          }
+        }
+        await models.Billing.findOneAndUpdate(filter, update)
+        return {
+          success: true,
+          message: 'Billing Address updated successfully'
+        }
+      } catch (error) {
+        return {
+          success: false,
+          message: 'Error updating billing address'
+        }
+      }
     }
   }
 }

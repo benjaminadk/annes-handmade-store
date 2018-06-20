@@ -73,7 +73,7 @@ const styles = theme => ({
     justifyContent: 'center'
   },
   confirmButton: {
-    width: '40vw',
+    width: '43vw',
     [theme.breakpoints.down('sm')]: {
       width: '80vw'
     }
@@ -181,6 +181,7 @@ class Payment extends Component {
             total,
             billingAddressId: address.id,
             shippingAddressId: ships[shipsIndex].id,
+            addressMatch,
             email: address.email
           }
         },

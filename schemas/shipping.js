@@ -27,6 +27,11 @@ module.exports = `
         zip: String
         notes: String
     }
+
+    type ShippingUpdatePayload {
+        success: Boolean
+        message: String
+    }
     
     type Query {
         getShippingsById(shippingIds: [ID]): [Shipping]
@@ -34,5 +39,6 @@ module.exports = `
     
     type Mutation {
         createShipping(input: ShippingInput): Shipping
+        editShipping(input: ShippingInput, id: ID): ShippingUpdatePayload
     }
 `

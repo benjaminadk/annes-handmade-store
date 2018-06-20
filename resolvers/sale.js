@@ -14,6 +14,7 @@ module.exports = {
         quantity,
         billingAddressId,
         shippingAddressId,
+        addressMatch,
         total,
         email
       } = input
@@ -46,7 +47,8 @@ module.exports = {
             quantity,
             total,
             billingAddress: billingAddressId,
-            shippingAddress: shippingAddressId
+            shippingAddress: shippingAddressId,
+            addressMatch
           })
           let savedSale = await sale.save()
 

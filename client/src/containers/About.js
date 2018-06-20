@@ -18,18 +18,7 @@ class About extends Component {
     return (
       <div>
         <h1>Testing Cloud Front</h1>
-        <div className={classes.images}>
-          <img
-            src="http://di213806f07x5.cloudfront.net/black-onyx-necklace-buddha-1"
-            alt="cloudfront test"
-            className={classes.image}
-          />
-          <img
-            src="https://s3-us-west-1.amazonaws.com/shopping-site/images/black-onyx-necklace-buddha-1"
-            alt="s3 test"
-            className={classes.image}
-          />
-        </div>
+        <div className={classes.images} />
       </div>
     )
   }

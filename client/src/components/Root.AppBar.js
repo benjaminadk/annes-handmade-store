@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button'
 import Badge from '@material-ui/core/Badge'
 import Avatar from '@material-ui/core/Avatar'
 import Tooltip from '@material-ui/core/Tooltip'
+import Hidden from '@material-ui/core/Hidden'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 
 const styles = theme => ({
@@ -19,7 +20,7 @@ const styles = theme => ({
   },
   logo: {
     backgroundImage:
-      'url(https://s3-us-west-1.amazonaws.com/shopping-site/assets/logo-200x200.jpeg)',
+      'url(https://s3-us-west-1.amazonaws.com/shopping-site/images/logo-200x200.jpeg)',
     backgroundSize: 'contain',
     height: '50px',
     width: '50px',
@@ -73,15 +74,17 @@ const RootAppBar = ({
           className={classes.logo}
         />
       </Link>
-      <Link
-        to="/catalog"
-        className={classes.anne}
-        onClick={() => handleBottomNav(null, '/catalog')}
-      >
-        <Typography variant="headline" className={classes.title}>
-          Anne's Handmade
-        </Typography>
-      </Link>
+      <Hidden smDown>
+        <Link
+          to="/catalog"
+          className={classes.anne}
+          onClick={() => handleBottomNav(null, '/catalog')}
+        >
+          <Typography variant="headline" className={classes.title}>
+            Anne's Handmade
+          </Typography>
+        </Link>
+      </Hidden>
       <div className={classes.toolRight}>
         <Tooltip title="Click to view Cart" enterDelay={500}>
           <IconButton

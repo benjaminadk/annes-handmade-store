@@ -25,6 +25,11 @@ module.exports = `
         state: String
         zip: String
     }
+
+    type BillingUpdatePayload {
+        success: Boolean
+        message: String
+    }
     
     type Query {
         getBillingsById(billingIds: [ID]): [Billing]
@@ -32,6 +37,7 @@ module.exports = `
     
     type Mutation {
         createBilling(input: BillingInput): Billing
+        editBilling(input: BillingInput, id: ID): BillingUpdatePayload
     }
 
 `

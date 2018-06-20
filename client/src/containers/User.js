@@ -4,10 +4,14 @@ import { graphql, compose } from 'react-apollo'
 import { GET_USER_BY_ID_QUERY } from '../queries/getUserById'
 import { SET_AVATAR_MUTATION } from '../mutations/setAvatar'
 import { S3_SIGN_MUTATION } from '../mutations/s3Sign'
+import { EDIT_SHIPPING } from '../mutations/editShipping'
+import { EDIT_BILLING } from '../mutations/editBilling'
 import Divider from '@material-ui/core/Divider'
 import Hidden from '@material-ui/core/Hidden'
 import UserDropzone from '../components/User.Dropzone'
 import UserSales from '../components/User.Sales'
+import UserAddress from '../components/User.Address'
+import UserAddressDialog from '../components/Checkout.Address.Dialog'
 import Loading from '../components/Loading'
 import axios from 'axios'
 import { formatFilename } from '../utils/formatFilename'
@@ -23,13 +27,147 @@ class User extends Component {
   state = {
     file: null,
     progress: 0,
-    avatar: ''
+    avatar: '',
+    addressDialog: false,
+    addressType: 'ship',
+    id: '',
+    title: '',
+    email: '',
+    firstName: '',
+    lastName: '',
+    street1: '',
+    street2: '',
+    city: '',
+    state: '',
+    zip: '',
+    notes: ''
   }
 
   componentDidMount() {
     if (localStorage.getItem('AVATAR')) {
       this.setState({ avatar: localStorage.getItem('AVATAR') })
     }
+  }
+
+  handleChange = e => this.setState({ [e.target.name]: e.target.value })
+
+  openAddressDialog = (addressType, address) => {
+    const {
+      id,
+      title,
+      email,
+      firstName,
+      lastName,
+      street1,
+      street2,
+      city,
+      state,
+      zip
+    } = address
+    const notes = addressType === 'ship' ? address.notes : ''
+    this.setState({
+      addressDialog: true,
+      addressType,
+      id,
+      title,
+      email,
+      firstName,
+      lastName,
+      street1,
+      street2,
+      city,
+      state,
+      zip,
+      notes
+    })
+  }
+
+  closeAddressDialog = e => {
+    this.setState({ addressDialog: false })
+    this.resetAddressForm()
+  }
+
+  resetAddressForm = () =>
+    this.setState({
+      addressDialog: false,
+      title: '',
+      email: '',
+      firstName: '',
+      lastName: '',
+      street1: '',
+      street2: '',
+      city: '',
+      state: '',
+      zip: '',
+      notes: ''
+    })
+
+  saveAddress = async () => {
+    const {
+      id,
+      title,
+      email,
+      firstName,
+      lastName,
+      street1,
+      street2,
+      city,
+      state,
+      zip,
+      notes
+    } = this.state
+    const userId = this.props.match.params.userId
+    if (this.state.addressType === 'ship') {
+      await this.props.editShipping({
+        variables: {
+          id,
+          input: {
+            userId,
+            title,
+            email,
+            firstName,
+            lastName,
+            street1,
+            street2,
+            city,
+            state,
+            zip,
+            notes
+          }
+        },
+        refetchQueries: [
+          {
+            query: GET_USER_BY_ID_QUERY,
+            variables: { userId: this.props.match.params.userId }
+          }
+        ]
+      })
+    } else if (this.state.addressType === 'bill') {
+      await this.props.editBilling({
+        variables: {
+          id,
+          input: {
+            userId,
+            title,
+            email,
+            firstName,
+            lastName,
+            street1,
+            street2,
+            city,
+            state,
+            zip
+          }
+        },
+        refetchQueries: [
+          {
+            query: GET_USER_BY_ID_QUERY,
+            variables: { userId: this.props.match.params.userId }
+          }
+        ]
+      })
+    }
+    this.resetAddressForm()
   }
 
   uploadToS3 = async (file, requestUrl) => {
@@ -72,8 +210,8 @@ class User extends Component {
       data: { getUserById, loading }
     } = this.props
     if (loading) return <Loading />
-    return (
-      <div className={classes.root}>
+    return [
+      <div key="name" className={classes.root}>
         <UserDropzone
           file={this.state.file}
           onDrop={this.onDrop}
@@ -86,8 +224,32 @@ class User extends Component {
           <UserSales sales={getUserById.sales} />
         </Hidden>
         <Divider />
-      </div>
-    )
+        <UserAddress
+          ships={getUserById.ships}
+          bills={getUserById.bills}
+          openAddressDialog={this.openAddressDialog}
+        />
+        <Divider />
+      </div>,
+      <UserAddressDialog
+        key="dialog"
+        open={this.state.addressDialog}
+        handleChange={this.handleChange}
+        closeAddressDialog={this.closeAddressDialog}
+        saveAddress={this.saveAddress}
+        addressType={this.state.addressType}
+        title={this.state.title}
+        email={this.state.email}
+        firstName={this.state.firstName}
+        lastName={this.state.lastName}
+        street1={this.state.street1}
+        street2={this.state.street2}
+        city={this.state.city}
+        state={this.state.state}
+        zip={this.state.zip}
+        notes={this.state.notes}
+      />
+    ]
   }
 }
 
@@ -99,5 +261,7 @@ export default compose(
     })
   }),
   graphql(SET_AVATAR_MUTATION, { name: 'setAvatar' }),
-  graphql(S3_SIGN_MUTATION, { name: 's3Sign' })
+  graphql(S3_SIGN_MUTATION, { name: 's3Sign' }),
+  graphql(EDIT_SHIPPING, { name: 'editShipping' }),
+  graphql(EDIT_BILLING, { name: 'editBilling' })
 )(User)

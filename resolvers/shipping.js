@@ -45,6 +45,49 @@ module.exports = {
         await models.User.findOneAndUpdate(filter, update, options)
       }
       return savedShipping
+    },
+
+    editShipping: async (root, { input, id }, { models }) => {
+      try {
+        const {
+          userId,
+          title,
+          email,
+          firstName,
+          lastName,
+          street1,
+          street2,
+          city,
+          state,
+          zip,
+          notes
+        } = input
+        const filter = { _id: id }
+        const update = {
+          $set: {
+            title,
+            email,
+            firstName,
+            lastName,
+            street1,
+            street2,
+            city,
+            state,
+            zip,
+            notes
+          }
+        }
+        await models.Shipping.findOneAndUpdate(filter, update)
+        return {
+          success: true,
+          message: 'Shipping Address updated successfully'
+        }
+      } catch (error) {
+        return {
+          success: false,
+          message: 'Error updating shipping address'
+        }
+      }
     }
   }
 }
