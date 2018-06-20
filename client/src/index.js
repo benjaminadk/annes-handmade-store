@@ -5,9 +5,10 @@ import { MuiThemeProvider } from '@material-ui/core/styles'
 import theme from './styles/theme'
 import { ApolloProvider } from 'react-apollo'
 import { ApolloClient } from 'apollo-client'
-import { HttpLink } from 'apollo-link-http'
+import { HttpLink, createHttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import { ApolloLink, concat } from 'apollo-link'
+import { createPersistedQueryLink } from 'apollo-link-persisted-queries'
 import App from './App'
 
 const NODE = document.getElementById('root')
@@ -17,7 +18,8 @@ const uri =
     ? 'https://annes-handmade.herokuapp.com/graphql'
     : 'http://localhost:3001/graphql'
 
-const httpLink = new HttpLink({ uri })
+//const httpLink = new HttpLink({ uri })
+const httpLink = createPersistedQueryLink().concat(createHttpLink({ uri }))
 const authMiddleware = new ApolloLink((operation, forward) => {
   operation.setContext(({ headers = {} }) => ({
     headers: {
