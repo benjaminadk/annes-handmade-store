@@ -45,7 +45,7 @@ const Footer = ({ classes }) => (
           rel="noopener noreferrer"
         >
           <img
-            src="https://di213806f07x5.cloudfront.net/fb-con-50x50.svg"
+            src="https://s3-us-west-1.amazonaws.com/shopping-site/assets/fb-con-50x50.svg"
             alt="facebook link"
           />
         </a>

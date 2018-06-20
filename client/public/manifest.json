@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "short_name": "Anne's Handmade",
-  "name": "Anne's Handmade Online Store",
+  "short_name": "Anne's HM",
+  "name": "Anne's Handmade",
   "icons": [
     {
       "src": "favicon.ico",
@@ -19,7 +19,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "https://annes-handmade.herokuapp.com/",
+  "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
