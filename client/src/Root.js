@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Switch, withRouter } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 import { PropsRoute } from './utils/PropsRoute'
 import { graphql, compose } from 'react-apollo'
 import { CREATE_CART_MUTATION } from './mutations/createCart'
@@ -7,16 +7,19 @@ import { LOGIN_MUTATION } from './mutations/login'
 import { SIGNUP_MUTATION } from './mutations/signup'
 import { AUTO_LOGIN_MUTATION } from './mutations/autoLogin'
 import { withStyles } from '@material-ui/core/styles'
+import Divider from '@material-ui/core/Divider'
 import Home from './containers/Home'
 import Catalog from './containers/Catalog'
 import Product from './containers/Product'
 import Checkout from './containers/Checkout'
 import User from './containers/User'
-import Help from './containers/Help'
 import About from './containers/About'
 import LoginDialog from './components/Root.Login'
 import RootAppBar from './components/Root.AppBar'
 import BottomNav from './components/Root.BottomNav'
+import Footer from './components/Root.Footer'
+import Shipping from './containers/Shipping'
+import Privacy from './containers/Privacy'
 import jd from 'jwt-decode'
 
 const styles = theme => ({})
@@ -32,7 +35,7 @@ class Root extends Component {
     open: false,
     errorMessage: '',
     avatar: '',
-    value: 0,
+    value: '/',
     addHomescreenButton: false
   }
 
@@ -271,13 +274,16 @@ class Root extends Component {
               component={User}
               setRootAvatar={this.setRootAvatar}
             />
-            <PropsRoute path="/help" component={Help} />
             <PropsRoute path="/about" component={About} />
+            <Route path="/shipping" component={Shipping} />
+            <Route path="/privacy" component={Privacy} />
           </Switch>
           <BottomNav
             value={this.state.value}
             handleBottomNav={this.handleBottomNav}
           />
+          <Divider />
+          <Footer />
         </div>
       </div>,
       <LoginDialog

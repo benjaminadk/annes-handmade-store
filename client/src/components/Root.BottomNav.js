@@ -8,9 +8,9 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import PersonIcon from '@material-ui/icons/PersonPin'
 
 const styles = theme => ({
-  root: {},
-  icon: {},
-  nav: {}
+  root: {
+    marginBottom: '5vh'
+  }
 })
 
 const BottomNav = ({ value, handleBottomNav, classes }) => (
@@ -18,15 +18,13 @@ const BottomNav = ({ value, handleBottomNav, classes }) => (
     value={value}
     onChange={handleBottomNav}
     showLabels
-    classes={{
-      root: classes.root
-    }}
+    className={classes.root}
   >
     <BottomNavigationAction label="Home" value="/" icon={<HomeIcon />} />
     <BottomNavigationAction
       label="Catalog"
       value="/catalog"
-      icon={<SearchIcon className={classes.icon} />}
+      icon={<SearchIcon />}
     />
     <BottomNavigationAction
       label="Checkout"
