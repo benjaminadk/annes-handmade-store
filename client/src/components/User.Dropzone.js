@@ -86,7 +86,11 @@ const UserDropzone = ({
         onClick={handleUploadAvatar}
         disabled={!file}
       >
-        {progress > 0 ? `${progress} %` : 'Change Avatar'}
+        {progress === 100
+          ? 'Avatar Uploaded'
+          : progress > 0
+            ? `${progress} %`
+            : 'Change Avatar'}
       </Button>
     </div>
   </div>

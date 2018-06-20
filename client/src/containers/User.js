@@ -43,9 +43,9 @@ class User extends Component {
     notes: ''
   }
 
-  componentDidMount() {
-    if (localStorage.getItem('AVATAR')) {
-      this.setState({ avatar: localStorage.getItem('AVATAR') })
+  componentDidUpdate(nextProps) {
+    if (nextProps.getUserById.avatar) {
+      this.setState({ avatar: nextProps.getUserById.avatar })
     }
   }
 
