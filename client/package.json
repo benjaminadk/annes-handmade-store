@@ -10,7 +10,6 @@
     "apollo-client": "^2.2.7",
     "apollo-link": "^1.2.1",
     "apollo-link-http": "^1.5.3",
-    "apollo-link-persisted-queries": "^0.2.1",
     "axios": "^0.18.0",
     "datasets-us-states-names": "^1.0.0",
     "graphql": "^0.13.2",
