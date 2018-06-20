@@ -1,4 +1,4 @@
-// const { ApolloEngine } = require('apollo-engine')
+const { ApolloEngine } = require('apollo-engine')
 const express = require('express')
 const compression = require('compression')
 const bodyParser = require('body-parser')
@@ -36,11 +36,11 @@ server.use(
     context: {
       models,
       user: req.user
+    },
+    tracing: true,
+    cacheControl: {
+      defaultMaxAge: 20
     }
-    // tracing: true,
-    // cacheControl: {
-    //   defaultMaxAge: 20
-    // }
   }))
 )
 
@@ -58,16 +58,16 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
-server.listen(port, () => console.log(`SERVER LISTENING ON PORT ${port}`))
+//server.listen(port, () => console.log(`SERVER LISTENING ON PORT ${port}`))
 
-// const engine = new ApolloEngine({
-//   apiKey: KEYS.ENGINE_API_KEY
-// })
+const engine = new ApolloEngine({
+  apiKey: KEYS.ENGINE_API_KEY
+})
 
-// engine.listen(
-//   {
-//     port,
-//     expressApp: server
-//   },
-//   () => console.log(`SERVER LISTENING ON PORT ${port}`)
-// )
+engine.listen(
+  {
+    port,
+    expressApp: server
+  },
+  () => console.log(`SERVER LISTENING ON PORT ${port}`)
+)
