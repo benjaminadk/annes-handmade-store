@@ -43,9 +43,9 @@ class User extends Component {
     notes: ''
   }
 
-  componentDidUpdate(nextProps) {
-    if (nextProps.getUserById.avatar) {
-      this.setState({ avatar: nextProps.getUserById.avatar })
+  componentDidUpdate(prevProps) {
+    if (!prevProps.getUserById.avatar && this.props.getUserById.avatar) {
+      this.setState({ avatar: this.props.getUserById.avatar })
     }
   }
 
