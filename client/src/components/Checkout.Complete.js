@@ -10,6 +10,7 @@ import TableCell from '@material-ui/core/TableCell'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import Button from '@material-ui/core/Button'
+import ReactToPrint from 'react-to-print'
 
 const styles = theme => ({
   header: {
@@ -44,9 +45,18 @@ const styles = theme => ({
     justifyContent: 'flex-end',
     marginTop: '2.5vh'
   },
+  buttons: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginTop: '5vh'
+  },
+  printButton: {
+    width: '25vw'
+  },
   backButton: {
     width: '25vw',
-    margin: '5vh 37vw'
+    marginTop: '2.5vh'
   }
 })
 
@@ -71,7 +81,10 @@ class Complete extends Component {
         <Typography variant="display2" className={classes.header}>
           Congratulations. Sale Completed Successfully.
         </Typography>
-        <div className={classes.cardContainer}>
+        <div
+          className={classes.cardContainer}
+          ref={ref => (this.printRef = ref)}
+        >
           <Card className={classes.card}>
             <CardHeader
               title={
@@ -150,15 +163,28 @@ class Complete extends Component {
             </CardContent>
           </Card>
         </div>
-        <Button
+        <div
           variant="raised"
           color="secondary"
           size="large"
-          className={classes.backButton}
-          onClick={this.props.clearCart}
+          className={classes.buttons}
         >
-          Continue Shopping
-        </Button>
+          <ReactToPrint
+            trigger={() => (
+              <Button className={classes.printButton}>Print Receipt</Button>
+            )}
+            content={() => this.printRef}
+          />
+          <Button
+            variant="raised"
+            color="secondary"
+            size="large"
+            className={classes.backButton}
+            onClick={this.props.clearCart}
+          >
+            Continue Shopping
+          </Button>
+        </div>
       </div>
     )
   }

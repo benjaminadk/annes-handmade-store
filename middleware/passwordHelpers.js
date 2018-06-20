@@ -30,7 +30,10 @@ function validatePassword(password) {
   const isEightChar = password.length >= 8
   const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/
   const hasCapitalLowerAndDigit = re.test(password)
-  return !isEightChar && !hasCapitalLowerAndDigit
+  if (!isEightChar || !hasCapitalLowerAndDigit) {
+    return false
+  }
+  return true
 }
 
 module.exports.hashPassword = hashPassword

@@ -55,7 +55,7 @@ const styles = theme => ({
     padding: '10px 14px',
     boxShadow:
       'rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px',
-    border: '1px solid #6b7c93',
+    border: '1px solid #384aa5',
     borderRadius: '5px',
     fontFamily: 'Roboto',
     [theme.breakpoints.down('sm')]: {
@@ -64,7 +64,7 @@ const styles = theme => ({
   },
   label: {
     fontFamily: 'Roboto',
-    color: '#6b7c93',
+    color: '#384aa5',
     fontWeight: 600,
     letterSpacing: '0.025em'
   },

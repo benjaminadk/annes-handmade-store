@@ -82,7 +82,7 @@ const Address = ({
           align="center"
           className={classes.header}
         >
-          Choose a Shipping Address
+          Choose A Shipping Address
         </Typography>
         <Typography variant="body2" align="center">
           Check existing address, or click button to create a new address
@@ -161,7 +161,7 @@ const Address = ({
     return (
       <div className={classes.noAddress}>
         <Typography variant="display2" align="center">
-          Please provide a Shipping Address
+          Please Provide A Shipping Address
         </Typography>
         <Button
           variant="raised"

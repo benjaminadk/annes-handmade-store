@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography'
 
 const styles = theme => ({
   inputs: {
-    width: '25vw',
+    width: '30vw',
     marginTop: '1vh'
   },
   text: {
@@ -76,7 +76,8 @@ const LoginDialog = ({
           value={password}
           className={classes.inputs}
           helperText={
-            !loginMode && 'Must contain 1 uppercase, lowercase & number'
+            !loginMode &&
+            'Must be 8 character & contain 1 uppercase, lowercase & number'
           }
           error={passwordError}
         />

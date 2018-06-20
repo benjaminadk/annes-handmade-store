@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Switch, Route, withRouter } from 'react-router-dom'
+import { Switch, withRouter } from 'react-router-dom'
 import { PropsRoute } from './utils/PropsRoute'
 import { graphql, compose } from 'react-apollo'
 import { CREATE_CART_MUTATION } from './mutations/createCart'
