@@ -11,12 +11,12 @@ class App extends Component {
   componentDidMount() {
     if (window.Stripe) {
       this.setState({
-        stripe: window.Stripe('pk_test_htV5BwONms8PGEJ4RVZgsOgU')
+        stripe: window.Stripe(process.env.REACT_APP_STRIPE_TEST)
       })
     } else {
       document.querySelector('#stripe-js').addEventListener('load', () => {
         this.setState({
-          stripe: window.Stripe('pk_test_htV5BwONms8PGEJ4RVZgsOgU')
+          stripe: window.Stripe(process.env.REACT_APP_STRIPE_TEST)
         })
       })
     }

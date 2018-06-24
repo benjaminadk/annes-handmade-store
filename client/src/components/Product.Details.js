@@ -4,9 +4,6 @@ import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-import Rating from 'react-rating'
-import StarIcon from '@material-ui/icons/Star'
-//import { findAverage } from '../utils/findAverage'
 
 const styles = theme => ({
   root: {
@@ -34,14 +31,6 @@ const styles = theme => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-around'
-  },
-  emptyStar: {
-    color: 'lightgrey',
-    fontSize: 35
-  },
-  fullStar: {
-    color: 'yellow',
-    fontSize: 35
   }
 })
 
@@ -54,7 +43,6 @@ const Details = ({
   classes
 }) => {
   const isDisabled = disableAddToCart(product)
-  //const initialRating = findAverage(product.ratings)
   return (
     <div className={classes.root}>
       <div className={classes.title}>
@@ -67,13 +55,6 @@ const Details = ({
               : 'Earrings'}
         </Typography>
       </div>
-      <Rating
-        initialRating={4}
-        emptySymbol={<StarIcon className={classes.emptyStar} />}
-        fullSymbol={<StarIcon className={classes.fullStar} />}
-        fractions={4}
-        readonly
-      />
       <Divider />
       <br />
       <div className={classes.price}>

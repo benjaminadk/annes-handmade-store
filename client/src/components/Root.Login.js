@@ -7,6 +7,7 @@ import DialogContent from '@material-ui/core/DialogContent'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
+import orange from '@material-ui/core/colors/orange'
 
 const styles = theme => ({
   inputs: {
@@ -30,9 +31,13 @@ const styles = theme => ({
   },
   toggleButton: {
     marginLeft: '1vw',
-    border: `2px solid ${theme.palette.secondary.main}`,
+    border: `2px solid ${orange[500]}`,
+    color: orange[500],
     fontWeight: 'bold',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    '&:hover': {
+      backgroundColor: orange[100]
+    }
   },
   button: {
     cursor: 'pointer'
@@ -77,7 +82,7 @@ const LoginDialog = ({
           className={classes.inputs}
           helperText={
             !loginMode &&
-            'Must be 8 character & contain 1 uppercase, lowercase & number'
+            'Must be 8 characters & contain 1 uppercase, 1 lowercase & 1 number'
           }
           error={passwordError}
         />
@@ -95,7 +100,6 @@ const LoginDialog = ({
           <Button
             onClick={toggleLoginMode}
             variant="outlined"
-            color="secondary"
             size="small"
             className={classes.toggleButton}
           >

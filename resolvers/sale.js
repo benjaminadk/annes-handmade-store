@@ -1,6 +1,7 @@
 const mail = require('../sendgrid')
 const _ = require('lodash')
-var stripe = require('stripe')('sk_test_D3pYF6JSQOgvsnHvMkvZEqu2')
+const keys = require('../config')
+var stripe = require('stripe')(keys.STRIPE_SECRET_TEST)
 
 module.exports = {
   Query: {},

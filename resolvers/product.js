@@ -2,7 +2,7 @@ module.exports = {
   Query: {
     getAllProducts: async (root, args, { models }) => {
       try {
-        const products = await models.Product.find({})
+        const products = await models.Product.find({ stock: { $gt: 0 } })
         return products
       } catch (error) {
         console.log('getAllProducts', error)
