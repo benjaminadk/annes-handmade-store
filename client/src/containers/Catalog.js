@@ -7,23 +7,20 @@ import { GET_ALL_PRODUCTS_QUERY } from '../queries/getAllProducts'
 import { ADD_PRODUCT_TO_CART } from '../mutations/addProductToCart'
 import { GET_CART_BY_ID_QUERY } from '../queries/getCartById'
 import Loading from '../components/Loading'
-import CatalogCards from '../components/CatalogCards'
-import CatalogDialog from '../components/CatalogDialog'
-import CatalogOuter from '../components/CatalogOuter'
+import CatalogCards from '../components/Catalog.Cards'
+import CatalogDialog from '../components/Catalog.Dialog'
+import CatalogOuter from '../components/Catalog.Outer'
 import BackIcon from '@material-ui/icons/ArrowBack'
 
 const styles = theme => ({
   root: {
     marginTop: '10vh',
-    padding: '0 2.5vw',
+    padding: '0 1.5vw',
     minHeight: '70vh'
   },
-  title: {
-    marginLeft: '1vw',
-    marginTop: '2vh'
-  },
   backButton: {
-    marginTop: '2vh'
+    marginTop: '2vh',
+    color: theme.palette.primary.main
   }
 })
 
@@ -32,8 +29,12 @@ class Catalog extends Component {
     message: '',
     open: false,
     filteredProducts: [],
-    innerCards: false
+    innerCards: false,
+    bead: ''
   }
+
+  handleCollapse = bead =>
+    this.setState({ bead: this.state.bead === bead ? '' : bead })
 
   outerCardClick = (isType, index) => {
     const products = this.props.data.getAllProducts
@@ -75,7 +76,7 @@ class Catalog extends Component {
       data: { loading },
       classes
     } = this.props
-    const { message, open, filteredProducts, innerCards } = this.state
+    const { message, open, filteredProducts, innerCards, bead } = this.state
     if (loading) return <Loading />
     return [
       <div key="catalog" className={classes.root}>
@@ -85,7 +86,13 @@ class Catalog extends Component {
           </Button>
         )}
         <Typography variant="display2">Catalog</Typography>
-        {!innerCards && <CatalogOuter outerCardClick={this.outerCardClick} />}
+        {!innerCards && (
+          <CatalogOuter
+            bead={bead}
+            handleCollapse={this.handleCollapse}
+            outerCardClick={this.outerCardClick}
+          />
+        )}
         {innerCards && (
           <CatalogCards
             key="cards"
