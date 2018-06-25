@@ -91,6 +91,11 @@ class About extends Component {
               sterling silver. Most of the gemstones are thought to have healing
               or spiritual qualities.
             </Typography>
+            <img
+              src="https://s3-us-west-1.amazonaws.com/shopping-site/images/assets/signature.png"
+              alt="anne brooke"
+              style={{ float: 'right' }}
+            />
           </div>
         </div>
         <div className={classes.imageContainer}>

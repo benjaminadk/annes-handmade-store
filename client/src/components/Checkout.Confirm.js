@@ -49,7 +49,7 @@ const styles = theme => ({
     backgroundPosition: 'center',
     height: '4vw',
     width: '4vw',
-    border: '1px solid'
+    border: `1px solid ${theme.palette.primary.main}`
   },
   math: {
     display: 'flex',
@@ -168,7 +168,13 @@ const Confirm = ({
                     style={{ backgroundImage: `url(${p.images[0]})` }}
                   />
                 </Hidden>
-                <Typography variant="body2">{p.title}</Typography>
+                <Typography
+                  variant="body2"
+                  align="center"
+                  style={{ width: '8vw' }}
+                >
+                  {p.title}
+                </Typography>
               </div>
 
               <div>
