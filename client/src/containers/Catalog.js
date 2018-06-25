@@ -91,7 +91,7 @@ class Catalog extends Component {
             key="cards"
             products={filteredProducts}
             cardClick={this.innerCardClick}
-            cardShortcut={this.cartShortcut}
+            cartShortcut={this.cartShortcut}
           />
         )}
       </div>,
