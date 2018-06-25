@@ -2,6 +2,7 @@ module.exports = `
     
     type Sale {
         id: ID
+        stripeId: String
         user: User
         products: [Product]
         quantity: [Int]

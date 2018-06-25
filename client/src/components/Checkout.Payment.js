@@ -58,6 +58,9 @@ const styles = theme => ({
     border: '1px solid #384aa5',
     borderRadius: '5px',
     fontFamily: 'Roboto',
+    '&:placeholder': {
+      color: 'red'
+    },
     [theme.breakpoints.down('sm')]: {
       width: '80vw'
     }
@@ -145,7 +148,7 @@ class Payment extends Component {
 
   submitForm = async e => {
     e.preventDefault()
-    const user = window.localStorage.getItem('USER_ID')
+    const user = localStorage.getItem('USER_ID')
     const {
       ships,
       bills,

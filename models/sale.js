@@ -1,6 +1,8 @@
 const mongoose = require('mongoose')
 
 const saleSchema = new mongoose.Schema({
+  stripeId: String,
+
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user'

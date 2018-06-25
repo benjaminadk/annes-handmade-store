@@ -43,6 +43,7 @@ module.exports = {
 
           //create a new sale record in database
           let sale = new models.Sale({
+            stripeId: charge.id,
             user,
             products: productIds,
             quantity,
@@ -95,6 +96,7 @@ module.exports = {
           }
         }
       } catch (error) {
+        console.log(error)
         return {
           success: false,
           type: error.raw.type || 'no-type',
