@@ -38,6 +38,7 @@
     "merge-graphql-schemas": "^1.5.1",
     "mongoose": "^5.0.11",
     "react-table": "^6.8.6",
-    "stripe": "^5.6.1"
+    "stripe": "^5.6.1",
+    "twilio": "^3.17.4"
   }
 }

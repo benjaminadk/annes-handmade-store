@@ -1,4 +1,5 @@
-const mail = require('../sendgrid')
+const mail = require('../services/sendgrid')
+//const sms = require('../services/twilio')
 const _ = require('lodash')
 const keys = require('../config')
 var stripe = require('stripe')(keys.STRIPE_SECRET_TEST)
@@ -71,6 +72,10 @@ module.exports = {
 
           //send email to customer
           mail(email, total)
+
+          //send sms message to Anne alerting her of sale
+          //free trial limit usage for now
+          //sms(total)
 
           //return payload to the frontend
           return {
