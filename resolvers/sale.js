@@ -2,7 +2,11 @@ const mail = require('../services/sendgrid')
 //const sms = require('../services/twilio')
 const _ = require('lodash')
 const keys = require('../config')
-var stripe = require('stripe')(keys.STRIPE_SECRET_LIVE)
+var stripe = require('stripe')(
+  process.env.NODE_ENV === 'production'
+    ? keys.STRIPE_SECRET_LIVE
+    : key.STRIPE_SECRET_TEST
+)
 
 module.exports = {
   Query: {},
@@ -26,7 +30,7 @@ module.exports = {
         const charge = await stripe.charges.create({
           amount: parseInt(total * 100),
           currency: 'usd',
-          source: token,
+          source: process.env.NODE_ENV === 'production' ? token : 'tok_visa',
           description: "Anne's Handmade"
         })
 

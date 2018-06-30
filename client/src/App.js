@@ -11,12 +11,20 @@ class App extends Component {
   componentDidMount() {
     if (window.Stripe) {
       this.setState({
-        stripe: window.Stripe(process.env.REACT_APP_STRIPE_LIVE)
+        stripe: window.Stripe(
+          process.env.NODE_ENV === 'production'
+            ? process.env.REACT_APP_STRIPE_LIVE
+            : process.env.REACT_APP_STRIPE_TEST
+        )
       })
     } else {
       document.querySelector('#stripe-js').addEventListener('load', () => {
         this.setState({
-          stripe: window.Stripe(process.env.REACT_APP_STRIPE_LIVE)
+          stripe: window.Stripe(
+            process.env.NODE_ENV === 'production'
+              ? process.env.REACT_APP_STRIPE_LIVE
+              : process.env.REACT_APP_STRIPE_TEST
+          )
         })
       })
     }
