@@ -4,6 +4,7 @@
   "description": "an ecommerce website for my mom",
   "main": "server.js",
   "scripts": {
+    "test": "jest",
     "server": "nodemon ./server.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
@@ -32,12 +33,12 @@
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "graphql": "^0.13.2",
+    "graphql-tester": "0.0.5",
     "graphql-tools": "^2.23.1",
     "heroku-ssl-redirect": "0.0.4",
     "jsonwebtoken": "^8.2.0",
     "merge-graphql-schemas": "^1.5.1",
     "mongoose": "^5.0.11",
-    "react-table": "^6.8.6",
     "stripe": "^5.6.1",
     "twilio": "^3.17.4"
   }
