@@ -72,7 +72,7 @@ class About extends Component {
               lost her to a violent crime. Susan was a juvenile diabetic from
               age 2 and was an RN who worked as a diabetic educator for many
               years. If I am successful with Anne's Handmade I will donate 5% of
-              my net sales to{' '}
+              my net profits to{' '}
               <a
                 href="https://www2.jdrf.org"
                 target="_blank"

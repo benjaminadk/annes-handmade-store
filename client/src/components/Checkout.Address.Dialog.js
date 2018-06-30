@@ -223,9 +223,6 @@ const AddressDialog = ({
         <Typography variant="body2" className={classes.required}>
           * required field
         </Typography>
-        <Button variant="raised" onClick={closeAddressDialog}>
-          Cancel
-        </Button>
         <Button
           variant="raised"
           color="primary"
@@ -242,6 +239,9 @@ const AddressDialog = ({
           onClick={saveAddress}
         >
           Save
+        </Button>
+        <Button variant="raised" onClick={closeAddressDialog}>
+          Cancel
         </Button>
       </DialogActions>
     </Dialog>

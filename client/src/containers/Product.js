@@ -16,20 +16,11 @@ const styles = theme => ({
     display: 'grid',
     gridTemplateColumns: '10% 30% 35% 25%',
     marginTop: '50px',
+    marginBottom: '10vh',
     [theme.breakpoints.down('sm')]: {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center'
-    }
-  },
-  lower: {
-    display: 'grid',
-    gridTemplateColumns: '75% 25%',
-    marginTop: '10vh',
-    paddingLeft: '2.5vw',
-    paddingRight: '2.5vw',
-    [theme.breakpoints.down('sm')]: {
-      marginTop: '5vh'
     }
   }
 })
@@ -131,9 +122,6 @@ class Product extends Component {
             goToCheckout={this.goToCheckout}
             goToCatalog={this.goToCatalog}
           />
-        </div>
-        <div className={classes.lower}>
-          <h1>Reviews</h1>
         </div>
       </div>
     )
