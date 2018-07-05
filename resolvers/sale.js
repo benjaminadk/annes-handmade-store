@@ -30,7 +30,7 @@ module.exports = {
         const charge = await stripe.charges.create({
           amount: parseInt(total * 100),
           currency: 'usd',
-          source: process.env.NODE_ENV === 'production' ? token : 'tok_visa',
+          source: process.env.NODE_ENV === 'production' ? token.id : 'tok_visa',
           description: "Anne's Handmade"
         })
 
