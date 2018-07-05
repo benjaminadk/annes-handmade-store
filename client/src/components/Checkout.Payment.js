@@ -161,16 +161,14 @@ class Payment extends Component {
       addressMatch
     } = this.props
     const address = addressMatch ? ships[shipsIndex] : bills[billsIndex]
-    const { token, error } = await this.props.stripe.createToken()
-    // attempt createToken without options
-    //   {
-    //   name: `${address.firstName} ${address.lastName}`,
-    //   address_line1: address.street1,
-    //   address_line2: address.street2 || '',
-    //   address_city: address.city,
-    //   address_state: address.state,
-    //   address_country: 'US'
-    // }
+    const { token, error } = await this.props.stripe.createToken({
+      name: `${address.firstName} ${address.lastName}`,
+      address_line1: address.street1,
+      address_line2: address.street2 || '',
+      address_city: address.city,
+      address_state: address.state,
+      address_country: 'US'
+    })
     if (error) {
       this.setState({ open: true, errorMessage: error.message })
       return
@@ -179,7 +177,7 @@ class Payment extends Component {
       let response = await this.props.createSale({
         variables: {
           input: {
-            token,
+            token: token.id,
             user,
             products: JSON.stringify(products),
             quantity,

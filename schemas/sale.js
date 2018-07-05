@@ -15,7 +15,7 @@ module.exports = `
     }
     
     input SaleInput {
-        token: Token
+        token: String
         user: ID
         products: String
         quantity: [Int]
