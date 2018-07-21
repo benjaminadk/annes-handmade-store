@@ -3,25 +3,24 @@ import { createMuiTheme } from '@material-ui/core/styles'
 export default createMuiTheme({
   palette: {
     primary: {
-      main: '#384aa5'
+      main: '#6a936f'
     },
     secondary: {
-      main: '#768aed'
+      main: '#ae7bc4'
     }
   },
   overrides: {
     MuiDialogTitle: {
       root: {
-        backgroundColor: '#384aa5',
+        backgroundColor: '#6a936f',
         color: 'white',
         fontFamily: 'Roboto',
-        fontSize: 25,
-        fontWeight: 'bold'
+        fontSize: 25
       }
     },
     MuiTooltip: {
       tooltip: {
-        backgroundColor: '#384aa5',
+        backgroundColor: '#6a936f',
         color: 'white'
       }
     }

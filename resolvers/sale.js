@@ -5,7 +5,7 @@ const keys = require('../config')
 var stripe = require('stripe')(
   process.env.NODE_ENV === 'production'
     ? keys.STRIPE_SECRET_LIVE
-    : key.STRIPE_SECRET_TEST
+    : keys.STRIPE_SECRET_TEST
 )
 
 module.exports = {

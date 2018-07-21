@@ -55,7 +55,7 @@ const styles = theme => ({
     padding: '10px 14px',
     boxShadow:
       'rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px',
-    border: '1px solid #384aa5',
+    border: `1px solid ${theme.palette.primary.main}`,
     borderRadius: '5px',
     fontFamily: 'Roboto',
     '&:placeholder': {
@@ -67,7 +67,7 @@ const styles = theme => ({
   },
   label: {
     fontFamily: 'Roboto',
-    color: '#384aa5',
+    color: theme.palette.primary.main,
     fontWeight: 600,
     letterSpacing: '0.025em'
   },
@@ -83,7 +83,7 @@ const styles = theme => ({
   },
   card: {
     width: '20vw',
-    border: '3px solid #3f51b5',
+    border: `3px solid ${theme.palette.primary.main}`,
     [theme.breakpoints.down('sm')]: {
       width: '80vw'
     }

@@ -17,27 +17,26 @@ const styles = theme => ({
 })
 
 const Thumbs = ({ images, activeIndex, handleActiveIndex, classes }) => {
-  return(
+  return (
     <div className={classes.root}>
-      {images.map((im,i) => {
-        return(
+      {images.map((im, i) => {
+        return (
           <div
             key={`thumb-item-${i}`}
             className={classes.thumb}
             onClick={() => handleActiveIndex(i)}
-            style={{ 
-              backgroundImage: `url(${im})`, 
+            style={{
+              backgroundImage: `url(${im})`,
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center',
-              outline: activeIndex === i ? '3px solid #3F51B5' : null
+              outline: activeIndex === i ? '3px solid #6a936f' : null
             }}
-          >
-          </div>
+          />
         )
       })}
     </div>
-    )
+  )
 }
 
 export default withStyles(styles)(Thumbs)

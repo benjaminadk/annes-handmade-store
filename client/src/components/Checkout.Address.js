@@ -96,7 +96,7 @@ const Address = ({
                   className={classes.card}
                   raised
                   style={
-                    shipsIndex === i ? { border: '3px solid #3f51b5' } : null
+                    shipsIndex === i ? { border: '3px solid #6a936f' } : null
                   }
                   onClick={() => selectShippingAddress2(i)}
                 >
