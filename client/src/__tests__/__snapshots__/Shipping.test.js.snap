@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Shipping Page renders correctly 1`] = `
+<div
+  className="Shipping-root-1"
+>
+  <h1
+    className="MuiTypography-root-4 MuiTypography-display2-7 Shipping-title-2"
+  >
+    Shipping Policy
+  </h1>
+  <aside
+    className="MuiTypography-root-4 MuiTypography-body2-12 MuiTypography-alignJustify-19 Shipping-content-3"
+  >
+    We offer free shipping to all our customers. At this time we only ship within the United States. All orders are shipped within 3 business days pending credit card verification. All items are shipped via USPS and enclosed in padded packaging.
+  </aside>
+</div>
+`;

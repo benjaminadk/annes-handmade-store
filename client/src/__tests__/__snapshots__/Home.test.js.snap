@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Page renders correctly 1`] = `
+<div
+  className="Home-root-1"
+>
+  <div
+    className="Home-logoContainer-2"
+  >
+    <img
+      alt="logo"
+      className="Home-logo-3"
+      src="https://di213806f07x5.cloudfront.net/assets/logo-500x500.svg"
+    />
+  </div>
+  <div
+    className="Home-button-4"
+  />
+</div>
+`;

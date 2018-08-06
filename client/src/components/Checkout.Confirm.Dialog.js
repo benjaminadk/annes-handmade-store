@@ -20,11 +20,11 @@ const CheckoutConfirmDialog = ({ open, onClose, toRemove, classes }) => (
       className={classes.content}
     >{`Remove ${toRemove} from your Cart ?`}</DialogContent>
     <DialogActions>
-      <Button variant="raised" onClick={() => onClose(false)}>
-        Cancel
-      </Button>
       <Button variant="raised" color="primary" onClick={() => onClose(true)}>
         Ok
+      </Button>
+      <Button variant="raised" onClick={() => onClose(false)}>
+        Cancel
       </Button>
     </DialogActions>
   </Dialog>

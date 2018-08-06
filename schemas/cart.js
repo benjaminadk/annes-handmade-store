@@ -7,11 +7,6 @@ module.exports = `
         createdOn: String
     }
     
-    type CartMutation {
-        success: Boolean
-        message: String
-    }
-    
     type CartPayload {
         cart: Cart
         taxRate: Float
@@ -26,9 +21,9 @@ module.exports = `
     
     type Mutation {
         createCart: Cart
-        addProductToCart(cartId: ID, productId: ID, quantity: Int): CartMutation
-        removeProductFromCart(cartId: ID, index: Int): CartMutation
-        editCartQuantity(cartId: ID, index: Int, quantity: Int): CartMutation
-        emptyCart(cartId: ID): CartMutation
+        addProductToCart(cartId: ID, productId: ID, quantity: Int): Payload
+        removeProductFromCart(cartId: ID, index: Int): Payload
+        editCartQuantity(cartId: ID, index: Int, quantity: Int): Payload
+        emptyCart(cartId: ID): Payload
     }
 `

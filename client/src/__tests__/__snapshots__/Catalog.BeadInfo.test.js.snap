@@ -1,0 +1,1338 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Catalog BeadInfo Component renders correctly 1`] = `
+<div
+  className={undefined}
+>
+  <span
+    className="MuiTypography-root-12 MuiTypography-button-23 MuiTypography-alignCenter-25 CatalogBeadInfo-direction-1"
+  >
+    Click a tile to browse a category
+  </span>
+  <div
+    className="MuiPaper-root-36 MuiPaper-elevation2-40 MuiPaper-rounded-37 CatalogBeadInfo-gemProperties-2"
+  >
+    <h2
+      className="MuiTypography-root-12 MuiTypography-title-18 CatalogBeadInfo-title-3"
+    >
+      Gem Properties
+    </h2>
+    <hr
+      className="MuiDivider-root-63"
+    />
+    <div
+      className="CatalogBeadInfo-beadInfoContainer-4"
+    >
+      <div
+        className="CatalogBeadInfo-beadInfo-5"
+        onClick={[Function]}
+      >
+        <span
+          className="MuiTypography-root-12 MuiTypography-button-23 CatalogBeadInfo-beadInfoTitle-6"
+        >
+          Red Jasper
+        </span>
+        <div
+          className="CatalogBeadInfo-beadInfoRight-7"
+        >
+          <img
+            alt="Red Jasper"
+            className="CatalogBeadInfo-thumbnail-8"
+            src="https://s3-us-west-1.amazonaws.com/shopping-site/images/assets/red-jasper.jpg"
+          />
+          <button
+            className="MuiButtonBase-root-73 MuiIconButton-root-67 CatalogBeadInfo-iconButton-11"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            <span
+              className="MuiIconButton-label-72"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-76"
+                color={undefined}
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <g>
+                  <path
+                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                  />
+                </g>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        className="MuiCollapse-container-82"
+        style={
+          Object {
+            "minHeight": "0px",
+          }
+        }
+      >
+        <div
+          className="MuiCollapse-wrapper-84"
+        >
+          <div
+            className="MuiCollapse-wrapperInner-85"
+          >
+            <div
+              className="CatalogBeadInfo-beadInfoCollapse-9"
+            >
+              <div
+                className="CatalogBeadInfo-beadInfoQuality-10"
+              >
+                <span
+                  className="MuiTypography-root-12 MuiTypography-caption-22"
+                >
+                  Spiritual Quality: 
+                </span>
+                <aside
+                  className="MuiTypography-root-12 MuiTypography-body2-20"
+                >
+                  Stregth & Stamina
+                </aside>
+              </div>
+              <p
+                className="MuiTypography-root-12 MuiTypography-body1-21 MuiTypography-alignJustify-27"
+              >
+                Carries a strong spiritual grounding for energy, strength and stamina. It is a rich and beautiful red color.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr
+        className="MuiDivider-root-63"
+      />
+    </div>
+    <div
+      className="CatalogBeadInfo-beadInfoContainer-4"
+    >
+      <div
+        className="CatalogBeadInfo-beadInfo-5"
+        onClick={[Function]}
+      >
+        <span
+          className="MuiTypography-root-12 MuiTypography-button-23 CatalogBeadInfo-beadInfoTitle-6"
+        >
+          Fancy Jasper
+        </span>
+        <div
+          className="CatalogBeadInfo-beadInfoRight-7"
+        >
+          <img
+            alt="Fancy Jasper"
+            className="CatalogBeadInfo-thumbnail-8"
+            src="https://s3-us-west-1.amazonaws.com/shopping-site/images/assets/fancy-jasper.jpg"
+          />
+          <button
+            className="MuiButtonBase-root-73 MuiIconButton-root-67 CatalogBeadInfo-iconButton-11"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            <span
+              className="MuiIconButton-label-72"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-76"
+                color={undefined}
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <g>
+                  <path
+                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                  />
+                </g>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        className="MuiCollapse-container-82"
+        style={
+          Object {
+            "minHeight": "0px",
+          }
+        }
+      >
+        <div
+          className="MuiCollapse-wrapper-84"
+        >
+          <div
+            className="MuiCollapse-wrapperInner-85"
+          >
+            <div
+              className="CatalogBeadInfo-beadInfoCollapse-9"
+            >
+              <div
+                className="CatalogBeadInfo-beadInfoQuality-10"
+              >
+                <span
+                  className="MuiTypography-root-12 MuiTypography-caption-22"
+                >
+                  Spiritual Quality: 
+                </span>
+                <aside
+                  className="MuiTypography-root-12 MuiTypography-body2-20"
+                >
+                  Tranquility
+                </aside>
+              </div>
+              <p
+                className="MuiTypography-root-12 MuiTypography-body1-21 MuiTypography-alignJustify-27"
+              >
+                Known as the stone of tranquility and helps to keep concentration and focus on the here and now. It comes in shades of mauve, green, cream and lilac.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr
+        className="MuiDivider-root-63"
+      />
+    </div>
+    <div
+      className="CatalogBeadInfo-beadInfoContainer-4"
+    >
+      <div
+        className="CatalogBeadInfo-beadInfo-5"
+        onClick={[Function]}
+      >
+        <span
+          className="MuiTypography-root-12 MuiTypography-button-23 CatalogBeadInfo-beadInfoTitle-6"
+        >
+          Mustang Jasper
+        </span>
+        <div
+          className="CatalogBeadInfo-beadInfoRight-7"
+        >
+          <img
+            alt="Mustang Jasper"
+            className="CatalogBeadInfo-thumbnail-8"
+            src="https://s3-us-west-1.amazonaws.com/shopping-site/images/assets/mustang-jasper.jpg"
+          />
+          <button
+            className="MuiButtonBase-root-73 MuiIconButton-root-67 CatalogBeadInfo-iconButton-11"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            <span
+              className="MuiIconButton-label-72"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-76"
+                color={undefined}
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <g>
+                  <path
+                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                  />
+                </g>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        className="MuiCollapse-container-82"
+        style={
+          Object {
+            "minHeight": "0px",
+          }
+        }
+      >
+        <div
+          className="MuiCollapse-wrapper-84"
+        >
+          <div
+            className="MuiCollapse-wrapperInner-85"
+          >
+            <div
+              className="CatalogBeadInfo-beadInfoCollapse-9"
+            >
+              <div
+                className="CatalogBeadInfo-beadInfoQuality-10"
+              >
+                <span
+                  className="MuiTypography-root-12 MuiTypography-caption-22"
+                >
+                  Spiritual Quality: 
+                </span>
+                <aside
+                  className="MuiTypography-root-12 MuiTypography-body2-20"
+                >
+                  Gratitude
+                </aside>
+              </div>
+              <p
+                className="MuiTypography-root-12 MuiTypography-body1-21 MuiTypography-alignJustify-27"
+              >
+                Often called the gratitude bead. It has a dark smokey base with red flashes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr
+        className="MuiDivider-root-63"
+      />
+    </div>
+    <div
+      className="CatalogBeadInfo-beadInfoContainer-4"
+    >
+      <div
+        className="CatalogBeadInfo-beadInfo-5"
+        onClick={[Function]}
+      >
+        <span
+          className="MuiTypography-root-12 MuiTypography-button-23 CatalogBeadInfo-beadInfoTitle-6"
+        >
+          Leopard Jasper
+        </span>
+        <div
+          className="CatalogBeadInfo-beadInfoRight-7"
+        >
+          <img
+            alt="Leopard Jasper"
+            className="CatalogBeadInfo-thumbnail-8"
+            src="https://s3-us-west-1.amazonaws.com/shopping-site/images/assets/leopard-jasper.jpg"
+          />
+          <button
+            className="MuiButtonBase-root-73 MuiIconButton-root-67 CatalogBeadInfo-iconButton-11"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            <span
+              className="MuiIconButton-label-72"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-76"
+                color={undefined}
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <g>
+                  <path
+                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                  />
+                </g>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        className="MuiCollapse-container-82"
+        style={
+          Object {
+            "minHeight": "0px",
+          }
+        }
+      >
+        <div
+          className="MuiCollapse-wrapper-84"
+        >
+          <div
+            className="MuiCollapse-wrapperInner-85"
+          >
+            <div
+              className="CatalogBeadInfo-beadInfoCollapse-9"
+            >
+              <div
+                className="CatalogBeadInfo-beadInfoQuality-10"
+              >
+                <span
+                  className="MuiTypography-root-12 MuiTypography-caption-22"
+                >
+                  Spiritual Quality: 
+                </span>
+                <aside
+                  className="MuiTypography-root-12 MuiTypography-body2-20"
+                >
+                  Harmony
+                </aside>
+              </div>
+              <p
+                className="MuiTypography-root-12 MuiTypography-body1-21 MuiTypography-alignJustify-27"
+              >
+                Thought to be a protective stone, promoting harmony between animal and man. Its reddish tones resemble leopard skin.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr
+        className="MuiDivider-root-63"
+      />
+    </div>
+    <div
+      className="CatalogBeadInfo-beadInfoContainer-4"
+    >
+      <div
+        className="CatalogBeadInfo-beadInfo-5"
+        onClick={[Function]}
+      >
+        <span
+          className="MuiTypography-root-12 MuiTypography-button-23 CatalogBeadInfo-beadInfoTitle-6"
+        >
+          Aventurine
+        </span>
+        <div
+          className="CatalogBeadInfo-beadInfoRight-7"
+        >
+          <img
+            alt="Aventurine"
+            className="CatalogBeadInfo-thumbnail-8"
+            src="https://s3-us-west-1.amazonaws.com/shopping-site/images/assets/aventurine.jpg"
+          />
+          <button
+            className="MuiButtonBase-root-73 MuiIconButton-root-67 CatalogBeadInfo-iconButton-11"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            <span
+              className="MuiIconButton-label-72"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-76"
+                color={undefined}
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <g>
+                  <path
+                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                  />
+                </g>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        className="MuiCollapse-container-82"
+        style={
+          Object {
+            "minHeight": "0px",
+          }
+        }
+      >
+        <div
+          className="MuiCollapse-wrapper-84"
+        >
+          <div
+            className="MuiCollapse-wrapperInner-85"
+          >
+            <div
+              className="CatalogBeadInfo-beadInfoCollapse-9"
+            >
+              <div
+                className="CatalogBeadInfo-beadInfoQuality-10"
+              >
+                <span
+                  className="MuiTypography-root-12 MuiTypography-caption-22"
+                >
+                  Spiritual Quality: 
+                </span>
+                <aside
+                  className="MuiTypography-root-12 MuiTypography-body2-20"
+                >
+                  Opportunity
+                </aside>
+              </div>
+              <p
+                className="MuiTypography-root-12 MuiTypography-body1-21 MuiTypography-alignJustify-27"
+              >
+                Known as the stone of opportunity, the luckiest of stones. It is mined in India and is a beautiful green.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr
+        className="MuiDivider-root-63"
+      />
+    </div>
+    <div
+      className="CatalogBeadInfo-beadInfoContainer-4"
+    >
+      <div
+        className="CatalogBeadInfo-beadInfo-5"
+        onClick={[Function]}
+      >
+        <span
+          className="MuiTypography-root-12 MuiTypography-button-23 CatalogBeadInfo-beadInfoTitle-6"
+        >
+          Carnelian
+        </span>
+        <div
+          className="CatalogBeadInfo-beadInfoRight-7"
+        >
+          <img
+            alt="Carnelian"
+            className="CatalogBeadInfo-thumbnail-8"
+            src="https://s3-us-west-1.amazonaws.com/shopping-site/images/assets/carnelian.jpg"
+          />
+          <button
+            className="MuiButtonBase-root-73 MuiIconButton-root-67 CatalogBeadInfo-iconButton-11"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            <span
+              className="MuiIconButton-label-72"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-76"
+                color={undefined}
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <g>
+                  <path
+                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                  />
+                </g>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        className="MuiCollapse-container-82"
+        style={
+          Object {
+            "minHeight": "0px",
+          }
+        }
+      >
+        <div
+          className="MuiCollapse-wrapper-84"
+        >
+          <div
+            className="MuiCollapse-wrapperInner-85"
+          >
+            <div
+              className="CatalogBeadInfo-beadInfoCollapse-9"
+            >
+              <div
+                className="CatalogBeadInfo-beadInfoQuality-10"
+              >
+                <span
+                  className="MuiTypography-root-12 MuiTypography-caption-22"
+                >
+                  Spiritual Quality: 
+                </span>
+                <aside
+                  className="MuiTypography-root-12 MuiTypography-body2-20"
+                >
+                  Healing
+                </aside>
+              </div>
+              <p
+                className="MuiTypography-root-12 MuiTypography-body1-21 MuiTypography-alignJustify-27"
+              >
+                Called the healing stone and said to boost courage and self confidence. It is a bright stone in brown, orange and red tones.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr
+        className="MuiDivider-root-63"
+      />
+    </div>
+    <div
+      className="CatalogBeadInfo-beadInfoContainer-4"
+    >
+      <div
+        className="CatalogBeadInfo-beadInfo-5"
+        onClick={[Function]}
+      >
+        <span
+          className="MuiTypography-root-12 MuiTypography-button-23 CatalogBeadInfo-beadInfoTitle-6"
+        >
+          Saguaro Jasper
+        </span>
+        <div
+          className="CatalogBeadInfo-beadInfoRight-7"
+        >
+          <img
+            alt="Saguaro Jasper"
+            className="CatalogBeadInfo-thumbnail-8"
+            src="https://s3-us-west-1.amazonaws.com/shopping-site/images/assets/saguro-jasper.jpg"
+          />
+          <button
+            className="MuiButtonBase-root-73 MuiIconButton-root-67 CatalogBeadInfo-iconButton-11"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            <span
+              className="MuiIconButton-label-72"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-76"
+                color={undefined}
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <g>
+                  <path
+                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                  />
+                </g>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        className="MuiCollapse-container-82"
+        style={
+          Object {
+            "minHeight": "0px",
+          }
+        }
+      >
+        <div
+          className="MuiCollapse-wrapper-84"
+        >
+          <div
+            className="MuiCollapse-wrapperInner-85"
+          >
+            <div
+              className="CatalogBeadInfo-beadInfoCollapse-9"
+            >
+              <div
+                className="CatalogBeadInfo-beadInfoQuality-10"
+              >
+                <span
+                  className="MuiTypography-root-12 MuiTypography-caption-22"
+                >
+                  Spiritual Quality: 
+                </span>
+                <aside
+                  className="MuiTypography-root-12 MuiTypography-body2-20"
+                >
+                  Meditation
+                </aside>
+              </div>
+              <p
+                className="MuiTypography-root-12 MuiTypography-body1-21 MuiTypography-alignJustify-27"
+              >
+                Very good for meditation. It is a peaceful green color.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr
+        className="MuiDivider-root-63"
+      />
+    </div>
+    <div
+      className="CatalogBeadInfo-beadInfoContainer-4"
+    >
+      <div
+        className="CatalogBeadInfo-beadInfo-5"
+        onClick={[Function]}
+      >
+        <span
+          className="MuiTypography-root-12 MuiTypography-button-23 CatalogBeadInfo-beadInfoTitle-6"
+        >
+          Black Onyx
+        </span>
+        <div
+          className="CatalogBeadInfo-beadInfoRight-7"
+        >
+          <img
+            alt="Black Onyx"
+            className="CatalogBeadInfo-thumbnail-8"
+            src="https://s3-us-west-1.amazonaws.com/shopping-site/images/assets/black-onyx.jpg"
+          />
+          <button
+            className="MuiButtonBase-root-73 MuiIconButton-root-67 CatalogBeadInfo-iconButton-11"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            <span
+              className="MuiIconButton-label-72"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-76"
+                color={undefined}
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <g>
+                  <path
+                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                  />
+                </g>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        className="MuiCollapse-container-82"
+        style={
+          Object {
+            "minHeight": "0px",
+          }
+        }
+      >
+        <div
+          className="MuiCollapse-wrapper-84"
+        >
+          <div
+            className="MuiCollapse-wrapperInner-85"
+          >
+            <div
+              className="CatalogBeadInfo-beadInfoCollapse-9"
+            >
+              <div
+                className="CatalogBeadInfo-beadInfoQuality-10"
+              >
+                <span
+                  className="MuiTypography-root-12 MuiTypography-caption-22"
+                >
+                  Spiritual Quality: 
+                </span>
+                <aside
+                  className="MuiTypography-root-12 MuiTypography-body2-20"
+                >
+                  Protection
+                </aside>
+              </div>
+              <p
+                className="MuiTypography-root-12 MuiTypography-body1-21 MuiTypography-alignJustify-27"
+              >
+                A powerful protection stone thought to absorb and transfer negative energy. It is deep black in color.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr
+        className="MuiDivider-root-63"
+      />
+    </div>
+    <div
+      className="CatalogBeadInfo-beadInfoContainer-4"
+    >
+      <div
+        className="CatalogBeadInfo-beadInfo-5"
+        onClick={[Function]}
+      >
+        <span
+          className="MuiTypography-root-12 MuiTypography-button-23 CatalogBeadInfo-beadInfoTitle-6"
+        >
+          Amethyst
+        </span>
+        <div
+          className="CatalogBeadInfo-beadInfoRight-7"
+        >
+          <img
+            alt="Amethyst"
+            className="CatalogBeadInfo-thumbnail-8"
+            src="https://s3-us-west-1.amazonaws.com/shopping-site/images/assets/amethyst.jpg"
+          />
+          <button
+            className="MuiButtonBase-root-73 MuiIconButton-root-67 CatalogBeadInfo-iconButton-11"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            <span
+              className="MuiIconButton-label-72"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-76"
+                color={undefined}
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <g>
+                  <path
+                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                  />
+                </g>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        className="MuiCollapse-container-82"
+        style={
+          Object {
+            "minHeight": "0px",
+          }
+        }
+      >
+        <div
+          className="MuiCollapse-wrapper-84"
+        >
+          <div
+            className="MuiCollapse-wrapperInner-85"
+          >
+            <div
+              className="CatalogBeadInfo-beadInfoCollapse-9"
+            >
+              <div
+                className="CatalogBeadInfo-beadInfoQuality-10"
+              >
+                <span
+                  className="MuiTypography-root-12 MuiTypography-caption-22"
+                >
+                  Spiritual Quality: 
+                </span>
+                <aside
+                  className="MuiTypography-root-12 MuiTypography-body2-20"
+                >
+                  Healing
+                </aside>
+              </div>
+              <p
+                className="MuiTypography-root-12 MuiTypography-body1-21 MuiTypography-alignJustify-27"
+              >
+                Its healing energy is known to help with physical and emotional issues. It is mined in Brazil and South Korea. It is violet in color.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr
+        className="MuiDivider-root-63"
+      />
+    </div>
+    <div
+      className="CatalogBeadInfo-beadInfoContainer-4"
+    >
+      <div
+        className="CatalogBeadInfo-beadInfo-5"
+        onClick={[Function]}
+      >
+        <span
+          className="MuiTypography-root-12 MuiTypography-button-23 CatalogBeadInfo-beadInfoTitle-6"
+        >
+          Rose Quartz
+        </span>
+        <div
+          className="CatalogBeadInfo-beadInfoRight-7"
+        >
+          <img
+            alt="Rose Quartz"
+            className="CatalogBeadInfo-thumbnail-8"
+            src="https://s3-us-west-1.amazonaws.com/shopping-site/images/assets/rose-quartz.jpg"
+          />
+          <button
+            className="MuiButtonBase-root-73 MuiIconButton-root-67 CatalogBeadInfo-iconButton-11"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            <span
+              className="MuiIconButton-label-72"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-76"
+                color={undefined}
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <g>
+                  <path
+                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                  />
+                </g>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        className="MuiCollapse-container-82"
+        style={
+          Object {
+            "minHeight": "0px",
+          }
+        }
+      >
+        <div
+          className="MuiCollapse-wrapper-84"
+        >
+          <div
+            className="MuiCollapse-wrapperInner-85"
+          >
+            <div
+              className="CatalogBeadInfo-beadInfoCollapse-9"
+            >
+              <div
+                className="CatalogBeadInfo-beadInfoQuality-10"
+              >
+                <span
+                  className="MuiTypography-root-12 MuiTypography-caption-22"
+                >
+                  Spiritual Quality: 
+                </span>
+                <aside
+                  className="MuiTypography-root-12 MuiTypography-body2-20"
+                >
+                  Heart
+                </aside>
+              </div>
+              <p
+                className="MuiTypography-root-12 MuiTypography-body1-21 MuiTypography-alignJustify-27"
+              >
+                Known as the stone of the heart and symbolizes unconditional love. It is light pink in color.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr
+        className="MuiDivider-root-63"
+      />
+    </div>
+    <div
+      className="CatalogBeadInfo-beadInfoContainer-4"
+    >
+      <div
+        className="CatalogBeadInfo-beadInfo-5"
+        onClick={[Function]}
+      >
+        <span
+          className="MuiTypography-root-12 MuiTypography-button-23 CatalogBeadInfo-beadInfoTitle-6"
+        >
+          Chalk Turquoise
+        </span>
+        <div
+          className="CatalogBeadInfo-beadInfoRight-7"
+        >
+          <img
+            alt="Chalk Turquoise"
+            className="CatalogBeadInfo-thumbnail-8"
+            src="https://s3-us-west-1.amazonaws.com/shopping-site/images/assets/tuquoise.jpg"
+          />
+          <button
+            className="MuiButtonBase-root-73 MuiIconButton-root-67 CatalogBeadInfo-iconButton-11"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            <span
+              className="MuiIconButton-label-72"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-76"
+                color={undefined}
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <g>
+                  <path
+                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                  />
+                </g>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        className="MuiCollapse-container-82"
+        style={
+          Object {
+            "minHeight": "0px",
+          }
+        }
+      >
+        <div
+          className="MuiCollapse-wrapper-84"
+        >
+          <div
+            className="MuiCollapse-wrapperInner-85"
+          >
+            <div
+              className="CatalogBeadInfo-beadInfoCollapse-9"
+            >
+              <div
+                className="CatalogBeadInfo-beadInfoQuality-10"
+              >
+                <span
+                  className="MuiTypography-root-12 MuiTypography-caption-22"
+                >
+                  Spiritual Quality: 
+                </span>
+                <aside
+                  className="MuiTypography-root-12 MuiTypography-body2-20"
+                >
+                  Healing
+                </aside>
+              </div>
+              <p
+                className="MuiTypography-root-12 MuiTypography-body1-21 MuiTypography-alignJustify-27"
+              >
+                White turquoise that is dyed and stabilized. Believed to benefit the whole body. It is turquois blue, often with white and brownish veins.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr
+        className="MuiDivider-root-63"
+      />
+    </div>
+    <div
+      className="CatalogBeadInfo-beadInfoContainer-4"
+    >
+      <div
+        className="CatalogBeadInfo-beadInfo-5"
+        onClick={[Function]}
+      >
+        <span
+          className="MuiTypography-root-12 MuiTypography-button-23 CatalogBeadInfo-beadInfoTitle-6"
+        >
+          Swarovski Crystal
+        </span>
+        <div
+          className="CatalogBeadInfo-beadInfoRight-7"
+        >
+          <img
+            alt="Swarovski Crystal"
+            className="CatalogBeadInfo-thumbnail-8"
+            src="https://s3-us-west-1.amazonaws.com/shopping-site/images/assets/swol.jpg"
+          />
+          <button
+            className="MuiButtonBase-root-73 MuiIconButton-root-67 CatalogBeadInfo-iconButton-11"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            <span
+              className="MuiIconButton-label-72"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-76"
+                color={undefined}
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <g>
+                  <path
+                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                  />
+                </g>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        className="MuiCollapse-container-82"
+        style={
+          Object {
+            "minHeight": "0px",
+          }
+        }
+      >
+        <div
+          className="MuiCollapse-wrapper-84"
+        >
+          <div
+            className="MuiCollapse-wrapperInner-85"
+          >
+            <div
+              className="CatalogBeadInfo-beadInfoCollapse-9"
+            >
+              <div
+                className="CatalogBeadInfo-beadInfoQuality-10"
+              >
+                <span
+                  className="MuiTypography-root-12 MuiTypography-caption-22"
+                >
+                  Spiritual Quality: 
+                </span>
+                <aside
+                  className="MuiTypography-root-12 MuiTypography-body2-20"
+                >
+                  Expensive
+                </aside>
+              </div>
+              <p
+                className="MuiTypography-root-12 MuiTypography-body1-21 MuiTypography-alignJustify-27"
+              >
+                Special glass beads that are cut this crazy angles.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr
+        className="MuiDivider-root-63"
+      />
+    </div>
+    <div
+      className="CatalogBeadInfo-beadInfoContainer-4"
+    >
+      <div
+        className="CatalogBeadInfo-beadInfo-5"
+        onClick={[Function]}
+      >
+        <span
+          className="MuiTypography-root-12 MuiTypography-button-23 CatalogBeadInfo-beadInfoTitle-6"
+        >
+          Yellow Jade
+        </span>
+        <div
+          className="CatalogBeadInfo-beadInfoRight-7"
+        >
+          <img
+            alt="Yellow Jade"
+            className="CatalogBeadInfo-thumbnail-8"
+            src="https://s3-us-west-1.amazonaws.com/shopping-site/images/assets/yellow-jade.jpg"
+          />
+          <button
+            className="MuiButtonBase-root-73 MuiIconButton-root-67 CatalogBeadInfo-iconButton-11"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            <span
+              className="MuiIconButton-label-72"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-76"
+                color={undefined}
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <g>
+                  <path
+                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                  />
+                </g>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        className="MuiCollapse-container-82"
+        style={
+          Object {
+            "minHeight": "0px",
+          }
+        }
+      >
+        <div
+          className="MuiCollapse-wrapper-84"
+        >
+          <div
+            className="MuiCollapse-wrapperInner-85"
+          >
+            <div
+              className="CatalogBeadInfo-beadInfoCollapse-9"
+            >
+              <div
+                className="CatalogBeadInfo-beadInfoQuality-10"
+              >
+                <span
+                  className="MuiTypography-root-12 MuiTypography-caption-22"
+                >
+                  Spiritual Quality: 
+                </span>
+                <aside
+                  className="MuiTypography-root-12 MuiTypography-body2-20"
+                >
+                  Fire
+                </aside>
+              </div>
+              <p
+                className="MuiTypography-root-12 MuiTypography-body1-21 MuiTypography-alignJustify-27"
+              >
+                Associated with fire energy and linked to ego and identity. It is yellow in color.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr
+        className="MuiDivider-root-63"
+      />
+    </div>
+  </div>
+</div>
+`;

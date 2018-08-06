@@ -12,6 +12,8 @@
     "apollo-link-http": "^1.5.3",
     "axios": "^0.18.0",
     "datasets-us-states-names": "^1.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.8.0",
     "jwt-decode": "^2.2.0",
@@ -36,6 +38,6 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "react-test-renderer": "^16.4.1"
+    "react-test-renderer": "^16.4.2"
   }
 }
