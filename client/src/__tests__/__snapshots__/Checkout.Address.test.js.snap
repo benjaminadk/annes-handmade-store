@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkout Address Component renders correctly with empty ships prop 1`] = `
+<div
+  className="Address-noAddress-8"
+>
+  <h1
+    className="MuiTypography-root-10 MuiTypography-display2-13 MuiTypography-alignCenter-23"
+  >
+    Please Provide A Shipping Address
+  </h1>
+  <button
+    className="MuiButtonBase-root-56 MuiButton-root-34 MuiButton-contained-43 MuiButton-containedSecondary-45 MuiButton-raised-46 MuiButton-raisedSecondary-48 MuiButton-sizeLarge-54 Address-noAddressButton-9"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex="0"
+    type="button"
+  >
+    <span
+      className="MuiButton-label-35"
+    >
+      Add New Address
+    </span>
+    <span
+      className="MuiTouchRipple-root-59"
+    />
+  </button>
+</div>
+`;

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Catalog Cards Component renders correctly 1`] = `
+<div
+  className="CatalogCards-root-1"
+/>
+`;

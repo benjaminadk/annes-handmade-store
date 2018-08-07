@@ -1,7 +1,7 @@
 import React from 'react'
 import BeadInfo from '../components/Catalog.BeadInfo'
 import renderer from 'react-test-renderer'
-import { mount } from 'enzyme'
+import { shallow } from 'enzyme'
 
 describe('Catalog BeadInfo Component', () => {
   it('renders correctly', () => {
@@ -9,7 +9,7 @@ describe('Catalog BeadInfo Component', () => {
     expect(tree).toMatchSnapshot()
   })
   it('receives a bead type as a prop', () => {
-    const wrapper = mount(<BeadInfo bead="Red Jasper" />)
+    const wrapper = shallow(<BeadInfo bead="Red Jasper" />)
     expect(wrapper.props().bead).toEqual('Red Jasper')
   })
 })
