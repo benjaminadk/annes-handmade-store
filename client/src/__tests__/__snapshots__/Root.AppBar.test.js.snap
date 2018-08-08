@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Root AppBar Component renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <WithStyles(RootAppBar) />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "classes": Object {
+        "anne": "RootAppBar-anne-1",
+        "avatar": "RootAppBar-avatar-4",
+        "button": "RootAppBar-button-5",
+        "cartIcon": "RootAppBar-cartIcon-8",
+        "loginButton": "RootAppBar-loginButton-6",
+        "logo": "RootAppBar-logo-2",
+        "title": "RootAppBar-title-7",
+        "toolRight": "RootAppBar-toolRight-3",
+      },
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "classes": Object {
+          "anne": "RootAppBar-anne-1",
+          "avatar": "RootAppBar-avatar-4",
+          "button": "RootAppBar-button-5",
+          "cartIcon": "RootAppBar-cartIcon-8",
+          "loginButton": "RootAppBar-loginButton-6",
+          "logo": "RootAppBar-logo-2",
+          "title": "RootAppBar-title-7",
+          "toolRight": "RootAppBar-toolRight-3",
+        },
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
