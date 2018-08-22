@@ -4,7 +4,7 @@
   "description": "an ecommerce website for my mom",
   "main": "server.js",
   "scripts": {
-    "test": "jest",
+    "test": "npm run test --prefix client",
     "server": "nodemon ./server.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
