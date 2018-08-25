@@ -147,16 +147,16 @@ class Complete extends Component {
                 </div>
                 <div>
                   <Typography variant="caption" align="right">
-                    $ {subTotal.toFixed(2)}
+                    $ {subTotal && subTotal.toFixed(2)}
                   </Typography>
                   <Typography variant="caption" align="right">
                     {(taxRate * 100).toFixed(2)} %
                   </Typography>
                   <Typography variant="caption" align="right">
-                    $ {taxTotal.toFixed(2)}
+                    $ {taxTotal && taxTotal.toFixed(2)}
                   </Typography>
                   <Typography variant="body2" align="right">
-                    $ {total.toFixed(2)}
+                    $ {total && total.toFixed(2)}
                   </Typography>
                 </div>
               </div>
