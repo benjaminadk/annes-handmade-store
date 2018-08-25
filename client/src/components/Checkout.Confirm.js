@@ -95,7 +95,7 @@ const Confirm = ({
       </div>
       <Divider />
       <br />
-      {products &&
+      {products.length > 0 &&
         products.map((p, i) => {
           return (
             <div key={`confirm-item-${i}`} className={classes.row}>
