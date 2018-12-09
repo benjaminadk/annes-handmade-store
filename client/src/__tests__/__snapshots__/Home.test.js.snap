@@ -4,6 +4,14 @@ exports[`Home Page renders correctly 1`] = `
 <div
   className="Home-root-1"
 >
+  <h1>
+    This site is DEPRECIATED.
+  </h1>
+  <a
+    href="https://anneshandmade.herokuapp.com"
+  >
+    Checkout the new Anne's Handmade!!!
+  </a>
   <div
     className="Home-logoContainer-2"
   >
