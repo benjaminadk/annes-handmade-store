@@ -10,16 +10,10 @@ const { makeExecutableSchema } = require('graphql-tools')
 const KEYS = require('./config')
 require('./models/connect')
 const models = require('./models')
-const {
-  fileLoader,
-  mergeResolvers,
-  mergeTypes
-} = require('merge-graphql-schemas')
+const { fileLoader, mergeResolvers, mergeTypes } = require('merge-graphql-schemas')
 
 const typeDefs = mergeTypes(fileLoader(path.join(__dirname, './schemas')))
-const resolvers = mergeResolvers(
-  fileLoader(path.join(__dirname, './resolvers'))
-)
+const resolvers = mergeResolvers(fileLoader(path.join(__dirname, './resolvers')))
 const schema = makeExecutableSchema({ typeDefs, resolvers })
 const server = express()
 const port = KEYS.PORT
@@ -58,16 +52,16 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
-//server.listen(port, () => console.log(`SERVER LISTENING ON PORT ${port}`))
+server.listen(port, () => console.log(`SERVER LISTENING ON PORT ${port}`))
 
-const engine = new ApolloEngine({
-  apiKey: KEYS.ENGINE_API_KEY
-})
+// const engine = new ApolloEngine({
+//   apiKey: KEYS.ENGINE_API_KEY
+// })
 
-engine.listen(
-  {
-    port,
-    expressApp: server
-  },
-  () => console.log(`SERVER LISTENING ON PORT ${port}`)
-)
+// engine.listen(
+//   {
+//     port,
+//     expressApp: server
+//   },
+//   () => console.log(`SERVER LISTENING ON PORT ${port}`)
+// )

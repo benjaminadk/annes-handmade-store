@@ -34,6 +34,8 @@ class Home extends Component {
     const { addHomescreenButton, handleAddToHomescreen, classes } = this.props
     return (
       <div className={classes.root}>
+        <h1>This site is DEPRECIATED.</h1>
+        <a href="https://anneshandmade.herokuapp.com">Checkout the new Anne's Handmade!!!</a>
         <div className={classes.logoContainer}>
           <img
             src="https://di213806f07x5.cloudfront.net/assets/logo-500x500.svg"
@@ -43,12 +45,7 @@ class Home extends Component {
         </div>
         <div className={classes.button}>
           {addHomescreenButton && (
-            <Button
-              variant="raised"
-              color="primary"
-              size="large"
-              onClick={handleAddToHomescreen}
-            >
+            <Button variant="raised" color="primary" size="large" onClick={handleAddToHomescreen}>
               Add Anne's Handmade To Your Homescreen
             </Button>
           )}
