@@ -2,11 +2,7 @@ const mail = require('../services/sendgrid')
 //const sms = require('../services/twilio')
 const _ = require('lodash')
 const keys = require('../config')
-var stripe = require('stripe')(
-  process.env.NODE_ENV === 'production'
-    ? keys.STRIPE_SECRET_LIVE
-    : keys.STRIPE_SECRET_TEST
-)
+var stripe = require('stripe')(keys.STRIPE_SECRET_TEST)
 
 module.exports = {
   Query: {},
@@ -68,10 +64,7 @@ module.exports = {
           }
           //update the products stock in database
           productIds.forEach(async (p, i) => {
-            await models.Product.update(
-              { _id: p },
-              { $inc: { stock: `-${quantity[i]}` } }
-            )
+            await models.Product.update({ _id: p }, { $inc: { stock: `-${quantity[i]}` } })
           })
 
           //send email to customer
@@ -92,10 +85,7 @@ module.exports = {
         }
 
         //if charge request fails
-        else if (
-          status === 'not_sent_to_network' ||
-          status === 'declined_by_network'
-        ) {
+        else if (status === 'not_sent_to_network' || status === 'declined_by_network') {
           return {
             success: false,
             type: null,
