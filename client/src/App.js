@@ -10,10 +10,10 @@ class App extends Component {
   }
   componentDidMount() {
     if (window.Stripe) {
-      this.setState({ stripe: window.Stripe(REACT_APP_STRIPE_TEST) })
+      this.setState({ stripe: window.Stripe(process.env.REACT_APP_STRIPE_TEST) })
     } else {
       document.querySelector('#stripe-js').addEventListener('load', () => {
-        this.setState({ stripe: window.Stripe(REACT_APP_STRIPE_TEST) })
+        this.setState({ stripe: window.Stripe(process.env.REACT_APP_STRIPE_TEST) })
       })
     }
   }
